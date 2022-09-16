@@ -7,7 +7,12 @@ const UserSchema = new mongoose.Schema({
         require: true,
         min: 3,
         max: 30,
-        unique: true
+    },
+    priezvisko: {
+        type: String,
+        require: true,
+        min: 3,
+        max: 30
     },
     email: {
         type: String,
@@ -28,11 +33,11 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: ''
     },
-    followery: {
+    sledovatelia: {
         type: Array,
         default: []
     },
-    followy: {
+    sledovane: {
         type: Array,
         default: []
     },
@@ -42,11 +47,11 @@ const UserSchema = new mongoose.Schema({
     },
     isZiak: {
         type: Boolean,
-        default: false
+        default: true
     },
     isZamestnanec: {
         type: Boolean,
-        default: true
+        default: false
     },
     popis: {
         type: String,

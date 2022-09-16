@@ -48,7 +48,26 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// follow
+// Sledovanie
+router.put('/:id/follow', async (req, res) => {
+    if(req.body.userId !== req.params.id) {
+        try {
+            const pouzivatel = await Pouzivatel.findById(req.params.id);
+            const sledovatel = await Pouzivatel.findById(req.body.userId);
+            if(!pouzivatel.sledovatelia.includes(req.body.userId)) {
+                await pouzivatel.updateOne({$push: {sledovatelia: req.body.userId} });
+                await sledovatel.updateOne({$push: {sledovane: req.body.userId} });
+                res.status(200).json('Sledujete nového používateľa!');
+            } else {
+                res.status(403).json('Tohto používateĺa už sledujete!');
+            }
+        } catch(err) {
+            res.status(500).json(err);
+        }
+    } else {
+        res.status(403).json('Nemôžete sledovať sami seba!');
+    }
+});
 
 // unfollow
 
