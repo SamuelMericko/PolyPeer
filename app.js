@@ -7,6 +7,7 @@ const morgan = require('morgan');
 
 // Routre
 const userRoute = require('./routes/pouzivatelia');
+const authRoute = require('./routes/auth');
 
 // inicializácia aplikácie
 const app = express();
@@ -23,6 +24,7 @@ app.use(helmet());
 app.use(morgan('common'));
 
 app.use('/api/pouzivatelia', userRoute);
+app.use('/api/auth', authRoute);
 
 // Aplikácia
 app.listen(8800,() => {
