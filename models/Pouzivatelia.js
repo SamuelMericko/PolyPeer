@@ -39,6 +39,30 @@ const UserSchema = new mongoose.Schema({
     isAdmin: {
         type: Boolean,
         default: false
+    },
+    isZiak: {
+        type: Boolean,
+        default: false
+    },
+    isZamestnanec: {
+        type: Boolean,
+        default: true
+    },
+    popis: {
+        type: String,
+        max: 50
+    },
+    mesto: {
+        type: String,
+        max: 50
+    },
+    skola: {
+        type: String,
+        max: 50
+    },
+    trieda: {
+        type: String,
+        max: 7
     }
 },{timestamps: true});
 
