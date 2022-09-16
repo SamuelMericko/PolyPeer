@@ -1,0 +1,33 @@
+{
+  "name": "polypeer",
+  "version": "1.0.0",
+  "description": "Maturitný Projekt - Sociálna sieť pre školu",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuelMericko/PolyPeer.git"
+  },
+  "keywords": [
+    "social",
+    "media",
+    "school",
+    "education"
+  ],
+  "author": "Samuel Meričko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamuelMericko/PolyPeer/issues"
+  },
+  "homepage": "https://github.com/SamuelMericko/PolyPeer#readme",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "helmet": "^6.0.0",
+    "mongoose": "^6.6.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
+  }
+}
