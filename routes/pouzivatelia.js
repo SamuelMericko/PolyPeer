@@ -70,5 +70,23 @@ router.put('/:id/follow', async (req, res) => {
 });
 
 // unfollow
-
+router.put('/:id/unfollow', async (req, res) => {
+    if(req.body.userId !== req.params.id) {
+        try {
+            const pouzivatel = await Pouzivatel.findById(req.params.id);
+            const sledovatel = await Pouzivatel.findById(req.body.userId);
+            if(pouzivatel.sledovatelia.includes(req.body.userId)) {
+                await pouzivatel.updateOne({$pull: {sledovatelia: req.body.userId} });
+                await sledovatel.updateOne({$pull: {sledovane: req.body.userId} });
+                res.status(200).json('Prestali ste sledovať používateľa!');
+            } else {
+                res.status(403).json('Tohto používateĺa nesledujete!');
+            }
+        } catch(err) {
+            res.status(500).json(err);
+        }
+    } else {
+        res.status(403).json('Nemôžete zrušit sledovanie sami sebe!');
+    }
+});
 module.exports = router;

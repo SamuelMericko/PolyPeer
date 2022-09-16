@@ -13,6 +13,7 @@ router.post('/registracia', async (req, res) => {
         // Vytvorenie nového používateľa
         const novyPouzivatel = new Pouzivatel({
             meno: req.body.meno,
+            priezvisko: req.body.priezvisko,
             email: req.body.email,
             heslo: hashHeslo
         });    
