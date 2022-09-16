@@ -20,7 +20,24 @@ router.post('/registracia', async (req, res) => {
         const pouzivatel = await novyPouzivatel.save();
         res.status(200).json(pouzivatel);
     } catch(err) {
-        console.log(err);
+        res.status(500).json(err)
+    }
+});
+
+// Prihlásenie
+router.post('/prihlasenie', async (req, res) => {
+    try {
+        // Email 
+        const pouzivatel = await Pouzivatel.findOne({email:req.body.email});
+        !pouzivatel && res.status(404).send('Používateľ sa nenašiel')
+
+        // Heslo
+        const spravneHeslo = await bcrypt.compare(req.body.heslo, pouzivatel.heslo);
+        !spravneHeslo && res.status(400).json('Zlé heslo');
+
+        res.status(200).json(pouzivatel);
+    } catch(err) {
+        res.status(500).json(err)
     }
 });
 
