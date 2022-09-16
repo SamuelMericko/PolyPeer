@@ -14,7 +14,7 @@ const app = express();
 dotenv.config();
 
 // Pripojenie k databáze
-mongoose.connect(process.env.MONHO_URL, {useNewUrlParser: true}, () => {
+mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true}, () => {
     console.log('pripojený k MongoDB');
 });
 
