@@ -8,6 +8,7 @@ const morgan = require('morgan');
 // Routre
 const userRoute = require('./routes/pouzivatelia');
 const authRoute = require('./routes/auth');
+const postRoute = require('./routes/posts');
 
 // inicializácia aplikácie
 const app = express();
@@ -25,6 +26,7 @@ app.use(morgan('common'));
 
 app.use('/api/pouzivatelia', userRoute);
 app.use('/api/auth', authRoute);
+app.use('/api/posts', postRoute);
 
 // Aplikácia
 app.listen(process.env.PORT,() => {
