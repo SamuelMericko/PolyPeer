@@ -15,10 +15,6 @@ const errorRoute = require('./routes/errors');
 const app = express();
 dotenv.config();
 
-// Pripojenie k databáze
-mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true}, () => {
-    console.log('pripojený k MongoDB');
-});
 
 // Middleware
 app.use(express.json());
@@ -36,6 +32,14 @@ app.get('/', (req, res, next) => {
   
 // Error hanlder
 app.use(errorRoute);
+
+// Pripojenie k databáze
+try {
+    mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true}, () => {
+    console.log('pripojený k MongoDB');
+})} catch(err) {
+    console.log(err);
+}
 
 // Aplikácia
 app.listen(process.env.PORT,() => {
