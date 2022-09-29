@@ -34,14 +34,13 @@ app.get('/', (req, res, next) => {
 app.use(errorRoute);
 
 // Pripojenie k databáze
-try {
-    mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true}, () => {
-    console.log('pripojený k MongoDB');
-})} catch(err) {
-    console.log(err);
-}
-
-// Aplikácia
-app.listen(process.env.PORT,() => {
-    console.log('backend server beží');
-});
+mongoose.connect(process.env.MONGO_URL)
+.then(() => {
+    // Aplikácia
+    app.listen(process.env.PORT,() => {
+    console.log('Backend server beží');
+    });
+})
+.catch((err) => {
+    console.log(err)
+})
