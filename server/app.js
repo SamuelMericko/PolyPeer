@@ -9,6 +9,7 @@ const morgan = require('morgan');
 const userRoute = require('./routes/pouzivatelia');
 const authRoute = require('./routes/auth');
 const postRoute = require('./routes/posts');
+const errorRoute = require('./routes/errors');
 
 // inicializácia aplikácie
 const app = express();
@@ -27,6 +28,14 @@ app.use(morgan('common'));
 app.use('/api/pouzivatelia', userRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/posts', postRoute);
+
+
+app.get('/', (req, res, next) => {
+    res.send('Hlavná testovacia stránka!');
+})
+  
+// Error hanlder
+app.use(errorRoute);
 
 // Aplikácia
 app.listen(process.env.PORT,() => {
