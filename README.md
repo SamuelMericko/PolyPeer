@@ -1,3 +1,4 @@
+![Snímka_obrazovky_zo_dňa_2022-09-30_08-17-43-removebg-preview](https://user-images.githubusercontent.com/112657175/193205177-96602337-a3a9-41da-ae31-1eaf2e87ec17.png)
 # Sociálna sieť vo forme webovej aplikácie
 ## Špecifikácie:
 ### Aplikácia by mala obsahovať:
