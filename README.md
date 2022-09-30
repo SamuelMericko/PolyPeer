@@ -7,9 +7,10 @@
  - Funkčný registračný/prihlasovací formulár
  - Dynamické profilové stránky
  - Globálnu nástenku, kam môžu publikovať všetci žiaci a zamestnanci
- - Nástenky pre jednotlivé triedy kam môžu publikovať len žiaci a
+ - Nástenky pre jednotlivé triedy, kam môžu publikovať len žiaci a
    triedny učitelia daných tried
- - Nástenku pre zamestnancov školy Funkčný chat
+ - Nástenku pre zamestnancov školy 
+ - Funkčný chat
  - Pridávanie a odoberanie priateľov
  - Smerovanie na hlavnú stránku školy a EduPage
  - Zmena svetlej/tmavej témy
