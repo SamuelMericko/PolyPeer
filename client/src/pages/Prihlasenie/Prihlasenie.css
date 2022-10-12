@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .prihlasenieWrapper {
     background-image: url(../../../public/images/pozadie-login.jpg);
     background-repeat: no-repeat;
