@@ -8,12 +8,13 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+    height: 100vh;    
+    width: 100%;
     font-family: 'Work Sans', sans-serif;
 }
 
 .leftbar {
+    animation: 3s anim-lineUp ease-out;
     flex: 50%;
     width: 35vw;
     padding: 80px;
@@ -22,7 +23,7 @@
 }
 
 .leftbar h1 {
-    font-size: 75px;
+    font-size: 70px;
 }
 
 .leftbar p {
@@ -30,11 +31,125 @@
     font-weight: 300;
 }
 
+.leftbarIllustracia img {
+    animation: 3s anim-lineUp ease-out;
+    margin-top: 80px;
+}
+
 .leftbarItem {
     padding-top: 40px;
 }
 
 .rightbar {
+    animation: 3s anim-lineUp ease-out;
     flex: 50%;
+    margin-right: 5%;
+    margin-top: 150px;
     padding: 80px;
+    align-items: center;
+    text-align: center;
+}
+
+.rightbarLogo {
+    vertical-align:middle;
+    margin:20px 0px 50px 0px;
+}
+
+.rightbarForm {
+    animation: 3s anim-lineUp ease-out;
+}
+
+.rightbarFormNazov {
+    color: rgb(99, 99, 99);
+    margin-bottom: 20px;
+}
+
+.rightbarFormPole {
+    display: inline-flex;
+    width: 80%;
+    background-color: #f0f0f0;
+    margin: 0px 0px 25px 0px;
+    height: 55px;
+    border-radius: 55px;
+    position: relative;
+}
+
+.rightbarLoginIcon {
+    width: 50px;
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 20px;
+    margin-right: 20px;
+}
+
+.rightbarLoginIcon:hover {
+    animation-name: zvacsenie;
+    animation-duration: 1s;
+}
+
+.rightbarFormPole input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+.rightbarZabudnuteHeslo {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+}
+
+.rightbarZabudnuteHeslo:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    border-bottom: 2px solid #00B0E6;
+    transition: 0.4s;
+}
+
+.rightbarZabudnuteHeslo:hover:after {
+    width: 100%;
+}
+
+.rightbarSubmitButton {
+    top: 20px;
+}
+
+.footerButton {
+    position: sticky;
+    margin-left: 107%;
+    margin-top: 37%;
+}
+
+/*ANIMÁCIE*/
+
+@keyframes zvacsenie {
+    0%   {scale: 100%;}
+    33%  {scale: 120%;}
+    100% {scale: 100%;}
+}
+
+@keyframes anim-lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
 }

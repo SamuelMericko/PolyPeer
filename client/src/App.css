@@ -1,0 +1,12 @@
+.loader {
+    justify-content: center;
+    height: 100vw;
+    width: 100vw;
+    margin: 0 auto;
+    padding-top: 10%;
+}
+
+.logo {
+    margin-left: 30%;
+    margin-top: 12%;
+}
