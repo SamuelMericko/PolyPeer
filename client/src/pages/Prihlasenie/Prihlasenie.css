@@ -1,0 +1,40 @@
+.prihlasenieWrapper {
+    background-image: url(../../../public/images/pozadie-login.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.leftbar {
+    flex: 50%;
+    width: 35vw;
+    padding: 80px;
+    text-align: center;
+    color: white;
+}
+
+.leftbar h1 {
+    font-size: 75px;
+}
+
+.leftbar p {
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.leftbarItem {
+    padding-top: 40px;
+}
+
+.rightbar {
+    flex: 50%;
+    padding: 80px;
+}
