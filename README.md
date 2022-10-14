@@ -3,7 +3,6 @@
 ## Špecifikácie:
 ### Aplikácia by mala obsahovať:
 
- - Úvodnú stránku
  - Funkčný registračný/prihlasovací formulár
  - Dynamické profilové stránky
  - Globálnu nástenku, kam môžu publikovať všetci žiaci a zamestnanci
