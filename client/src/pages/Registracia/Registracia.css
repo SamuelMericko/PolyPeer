@@ -2,7 +2,7 @@ body {
     overflow: hidden;
 }
 
-.prihlasenieWrapper {
+.registraciaWrapper {
     background-image: url(../../../public/images/pozadie-login.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -17,7 +17,7 @@ body {
     font-family: 'Work Sans', sans-serif;
 }
 
-.prihlasenie {
+.registracia {
     animation: 3s anim-lineUp ease-out;
     flex: 50%;
     width: 35vw;
@@ -26,21 +26,21 @@ body {
     color: white;
 }
 
-.prihlasenie h1 {
+.registracia h1 {
     font-size: 70px;
 }
 
-.prihlasenie p {
+.registracia p {
     font-size: 40px;
     font-weight: 300;
 }
 
-.prihlasenieIllustracia img {
+.registraciaIllustracia img {
     animation: 3s anim-lineUp ease-out;
     margin-top: 80px;
 }
 
-.prihlasenieItem {
+.registraciaItem {
     padding-top: 40px;
 }
 

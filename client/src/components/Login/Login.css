@@ -1,0 +1,88 @@
+
+.login {
+    animation: 3s anim-lineUp ease-out;
+    flex: 50%;
+    margin-right: 5%;
+    margin-top: 150px;
+    padding: 80px;
+    align-items: center;
+    text-align: center;
+}
+
+.loginLogo {
+    vertical-align:middle;
+    margin:20px 0px 50px 0px;
+}
+
+.loginForm {
+    animation: 3s anim-lineUp ease-out;
+}
+
+.loginFormNazov {
+    color: rgb(99, 99, 99);
+    margin-bottom: 20px;
+}
+
+.loginFormPole {
+    display: inline-flex;
+    width: 80%;
+    background-color: #f0f0f0;
+    margin: 0px 0px 25px 0px;
+    height: 55px;
+    border-radius: 55px;
+    position: relative;
+}
+
+.loginIcon {
+    width: 35px;
+    height: 35px;
+    padding-top: 15px;
+    padding-left: 20px;
+    margin-right: 20px;
+}
+
+.loginIcon:hover {
+    animation-name: zvacsenie;
+    animation-duration: 1s;
+}
+
+.loginFormPole input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+.loginZabudnuteHeslo {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+}
+
+.loginZabudnuteHeslo:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    border-bottom: 2px solid #00B0E6;
+    transition: 0.4s;
+}
+
+.loginZabudnuteHeslo:hover:after {
+    width: 100%;
+}
+
+.loginSubmitButton{
+    top: 20px;
+}
+
+.loginFooterButton {
+    position: absolute;   
+    bottom: 2%;
+    right: 2%;
+}

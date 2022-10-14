@@ -1,31 +1,57 @@
+// Knižnice
 import React from "react";
-import Prihlasenie from "./pages/Prihlasenie/Prihlasenie";
-import HashLoader from 'react-spinners/HashLoader';
 import { useEffect, useState } from "react";
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
+// Stránky
+import Prihlasenie from "./pages/Prihlasenie/Prihlasenie";
+import Registracia from "./pages/Registracia/Registracia";
+import Nenajdene from "./pages/Nenajdene/Nenajdene";
 
-function App() {
-  const [loading, setLoading] = useState(false);
+//Vytvorenie témy stránky
+import { createTheme, ThemeProvider } from '@mui/material';
+import { green } from "@mui/material/colors";
+import Nacitavanie from "./components/Nacitavanie/Nacitavanie";
 
-  useEffect(() => {
-      setLoading(true);
-      setTimeout(() => {
-          setLoading(false);
-      }, 2000);
-  }, []);
+const tema = createTheme({
+    palette: {
+      primary: {
+        main: '#0087B9',
+        contrastText: '#fff'
+      },
+      secondary: {
+        main: green[600],
+        contrastText: '#fff'
+      },
+    },
+  });
 
-  return (
-    <div className="App">
-    {loading ? (
-      <>
-      <img src="/images/logo.svg" alt="Polypeer_logo" className="logo" width="40%"/>
-      <HashLoader color="#00B0E6" size={100} className="loader" />
-      </>
-    ) : (
-      <Prihlasenie />
-    )}
-    </div>
+  function App() {
+    {/* NACITAVANIE */ }
+    const [loading, setLoading] = useState(false);
+    
+        useEffect(() => {
+            setLoading(true);
+            setTimeout(() => {
+                setLoading(false);
+            }, 2000);
+        }, []);
+
+    return (
+      <ThemeProvider theme={tema}>
+        <div className="App">
+          {loading? (
+            <Nacitavanie />
+          ) : (
+            <Routes>
+              <Route path="/" element={< Registracia />}/>
+              <Route path="/login" element={<Prihlasenie/>}/>
+              <Route path="*" element={<Nenajdene />} />
+            </Routes>
+          )}
+        </div>
+      </ThemeProvider>
   );
 }
 

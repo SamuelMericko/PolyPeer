@@ -1,0 +1,91 @@
+.register {
+    animation: 3s anim-lineUp ease-out;
+    flex: 50%;
+    margin-top: 80px;
+    padding: 80px;
+    width: 40vw;
+    align-items: center;
+    text-align: center;
+}
+
+.registerLogo {
+    vertical-align:middle;
+    margin:20px 0px 50px 0px;
+}
+
+.registerForm {
+    animation: 3s anim-lineUp ease-out;
+}
+
+.registerFormNazov {
+    color: rgb(99, 99, 99);
+    margin-bottom: 20px;
+}
+
+.registerFormPole {
+    display: inline-flex;
+    width: 80%;
+    background-color: #f0f0f0;
+    margin: 0px 0px 25px 0px;
+    height: 55px;
+    border-radius: 55px;
+    position: relative;
+}
+
+.registerIcon {
+    width: 35px;
+    height: 35px;
+    padding-top: 15px;
+    padding-left: 20px;
+    margin-right: 20px;
+}
+
+.registerIcon:hover {
+    animation-name: zvacsenie;
+    animation-duration: 1s;
+}
+
+.registerFormPole input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+.registerZabudnuteHeslo {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+}
+
+.registerZabudnuteHeslo:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    border-bottom: 2px solid #00B0E6;
+    transition: 0.4s;
+}
+
+.registerZabudnuteHeslo:hover:after {
+    width: 100%;
+}
+
+.registerSubmitButton {
+    top: 20px;
+}
+
+.registerLoginButton {
+    top: 40px;
+}
+
+.registerFooterButton {
+    position: absolute;   
+    bottom: 2%;
+    right: 2%;
+}
