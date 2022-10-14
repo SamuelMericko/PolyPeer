@@ -1,4 +1,5 @@
 ![Snímka_obrazovky_zo_dňa_2022-09-30_08-17-43-removebg-preview](https://user-images.githubusercontent.com/112657175/193205177-96602337-a3a9-41da-ae31-1eaf2e87ec17.png)
+![GitHub last commit](https://img.shields.io/github/last-commit/SamuelMericko/PolyPeer?label=Posledn%C3%BD%20commit)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/SamuelMericko/PolyPeer?label=Ve%C4%BEkos%C5%A5%20k%C3%B3du&logo=JavaScript&style=flat-square)
 # Sociálna sieť vo forme webovej aplikácie
 ## Špecifikácie:
