@@ -3,6 +3,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/SamuelMericko/PolyPeer?label=Ve%C4%BEkos%C5%A5%20k%C3%B3du&logo=JavaScript&style=flat-square)
 ![GitHub top language](https://img.shields.io/github/languages/top/SamuelMericko/Polypeer?logo=javascript&style=flat-square)
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/SamuelMericko/PolyPeer/main?style=flat-square)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/SamuelMericko/PolyPeer?style=flat-square)
 # Sociálna sieť vo forme webovej aplikácie
 ## Špecifikácie:
 ### Aplikácia by mala obsahovať:
