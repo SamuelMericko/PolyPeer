@@ -8,6 +8,7 @@ import './App.css';
 import Prihlasenie from "./pages/Prihlasenie/Prihlasenie";
 import Registracia from "./pages/Registracia/Registracia";
 import Nenajdene from "./pages/Nenajdene/Nenajdene";
+import Domov from "./pages/Domov/Domov";
 
 //Vytvorenie témy stránky
 import { createTheme, ThemeProvider } from '@mui/material';
@@ -46,7 +47,8 @@ const tema = createTheme({
           ) : (
             <Routes>
               <Route path="/" element={< Registracia />}/>
-              <Route path="/login" element={<Prihlasenie/>}/>
+              <Route path="/login" element={<Prihlasenie />}/>
+              <Route path="/domov" element={<Domov />}/>
               <Route path="*" element={<Nenajdene />} />
             </Routes>
           )}

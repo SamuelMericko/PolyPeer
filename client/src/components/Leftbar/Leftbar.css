@@ -1,0 +1,9 @@
+.leftbar {
+    flex: 2;
+    height: 100vh;
+    background-color: aqua;
+}
+
+.leftbarWrapper {
+    padding: 20px;
+}
