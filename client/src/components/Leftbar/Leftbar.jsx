@@ -1,6 +1,6 @@
 import React from "react";
 import './Leftbar.css';
-import BlizkiPriatel from "../BlizkiPriatel/BlizkiPriatel";
+import BlizkyPriatel from "../BlizkyPriatel/BlizkyPriatel";
 import { Users } from "../../dummyData";
 
 //ikony
@@ -64,7 +64,7 @@ const Leftbar = () => {
                 
                 <ul className="blizkiPriatelia">
                 {Users.map((u)=> (
-                    <BlizkiPriatel key={u.id} user={u}/>
+                    <BlizkyPriatel key={u.id} user={u}/>
                 ))}
                 </ul>
             </div>

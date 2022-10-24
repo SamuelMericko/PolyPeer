@@ -1,5 +1,5 @@
 .leftbar {
-    flex: 2;
+    flex: 1.7;
     height: 100vh;
     animation: 3s anim-lineUpDomov ease-out;
     overflow: scroll;
