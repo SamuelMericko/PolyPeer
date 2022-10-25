@@ -36,11 +36,6 @@ const Register = () => {
                 <Button variant="contained" type="submit" endIcon={<ArrowUpward />} size="large" className="registerSubmitButton">Registrovať sa</Button>
                 <br />
                 <Button variant="contained" type="submit" endIcon={<ArrowUpward />} size="medium" color="secondary" className="registerLoginButton" href="/login">Prihlásiť sa</Button>
-                <footer>
-                    <div className="registerFooterButton">
-                        <Button href="/domov" size="large" variant="outlined" color="primary"><Home /></Button>
-                    </div>
-                </footer>
             </div>
         </div>
     );

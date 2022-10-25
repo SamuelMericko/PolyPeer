@@ -80,9 +80,3 @@
 .loginSubmitButton{
     top: 20px;
 }
-
-.loginFooterButton {
-    position: absolute;   
-    bottom: 2%;
-    right: 2%;
-}

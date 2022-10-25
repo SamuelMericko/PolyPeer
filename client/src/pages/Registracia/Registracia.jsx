@@ -1,6 +1,7 @@
 import React from "react";
 import './Registracia.css';
 import Register from "../../components/Register/Register";
+import FooterButton from '../../components/FooterButton/FooterButton';
 
 const Registracia = () => {
     return (
@@ -15,6 +16,7 @@ const Registracia = () => {
                 </div>
             </div>
             <Register />
+            <FooterButton />
         </div>
     );
 }

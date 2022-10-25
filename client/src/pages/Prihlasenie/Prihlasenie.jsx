@@ -1,6 +1,7 @@
 import React from "react";
 import './Prihlasenie.css';
 import Login from "../../components/Login/Login";
+import FooterButton from "../../components/FooterButton/FooterButton";
 
 const Prihlasenie = () => {
 
@@ -16,6 +17,7 @@ const Prihlasenie = () => {
                 </div>
             </div>
             <Login />
+            <FooterButton />
         </div>
     );
 }
