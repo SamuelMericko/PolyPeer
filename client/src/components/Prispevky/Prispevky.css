@@ -1,6 +1,6 @@
 .prispevky {
     flex: 5;
-    height: 100vh;
+    height: 95vh;
     overflow: scroll;
     animation: 3s anim-lineUpPrispevky ease-out;
 }

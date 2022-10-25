@@ -7,15 +7,18 @@ export default function Rightbar({profile}) {
   const HomeRightBar = () => {
     return(
       <> 
-        <div className="ilustraciaWrapper">
-          <img src="" alt="" />
-        </div>  
-        <h4 className="rightbarNazov">Online Priatelia</h4>
-        <ul className="rightbarFriendList">
-          {Users.map(u =>(
-            <Online key={u.id} user={u}/>
-          ))}
-        </ul>
+        <div className="homeRightbarWrapper">
+          <div className="ilustraciaWrapper">
+            <img src="/images/rightbarIlustracia.jpg" alt="kavaIlustracia" className='rightbarIlustracia'/>
+          </div>  
+          <hr className="rightbarBreak"/>
+          <h4 className="rightbarNazov">Online Priatelia</h4>
+          <ul className="rightbarFriendList">
+            {Users.map(u =>(
+              <Online key={u.id} user={u}/>
+            ))}
+          </ul>
+        </div>
       </>
     );
   }
