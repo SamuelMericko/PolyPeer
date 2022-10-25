@@ -21,39 +21,39 @@ export default function LeftbarMenu() {
       </div>
 
      <List sx={{ width: '100%', maxWidth: 360 }}>
-        <ListItemButton sx={{ pl: 4, color: 'secondary' }} href="/login" >
-          <ListItemIcon color='primary'>
-            <Home />
+        <ListItemButton sx={{ pl: 4}} href="/login" >
+          <ListItemIcon>
+            <Home color="primary"/>
           </ListItemIcon>
           <ListItemText primary="Domov" />
         </ListItemButton>
         <ListItemButton sx={{ pl: 4 }}>
           <ListItemIcon>
-            <Chat />
+            <Chat color="primary"/>
           </ListItemIcon>
           <ListItemText primary="Správy" />
         </ListItemButton>
         <ListItemButton sx={{ pl: 4 }}>
           <ListItemIcon>
-            <Person />
+            <Person color="primary"/>
           </ListItemIcon>
           <ListItemText primary="Profil" />
         </ListItemButton>
         <ListItemButton sx={{ pl: 4 }} href="https://soshe.edupage.org/">
           <ListItemIcon>
-            <School />
+            <School color="primary"/>
           </ListItemIcon>
           <ListItemText primary="Stránka školy" />
         </ListItemButton>
         <ListItemButton sx={{ pl: 4 }} href="https://portal.edupage.org/">
           <ListItemIcon>
-            <CastForEducation />
+            <CastForEducation color="primary"/>
           </ListItemIcon>
           <ListItemText primary="Edupage" />
         </ListItemButton>
         <ListItemButton sx={{ pl: 4 }}>
           <ListItemIcon>
-            <Settings />
+            <Settings color="primary"/>
           </ListItemIcon>
           <ListItemText primary="Nastavenia" />
         </ListItemButton>

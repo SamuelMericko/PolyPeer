@@ -1,6 +1,7 @@
 import React from "react";
 import './Topbar.css';
 import { Search, Person, Chat, Notifications } from "@mui/icons-material";
+import TopbarDetaily from "../Topbar/TopbarDetaily/TopbarDetaily";
 
 const Topbar = () => {
     return (
@@ -16,7 +17,10 @@ const Topbar = () => {
                         <input placeholder="Hľadajte prijateľov, príspevky alebo obrázky" className='searchInput' />
                     </div>
                 </div>
-                
+
+                <div className="topbarVpravo">
+                    <TopbarDetaily />
+                </div>
             </div>
         </div>
     );
