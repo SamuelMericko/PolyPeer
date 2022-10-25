@@ -38,7 +38,7 @@ const Register = () => {
                 <Button variant="contained" type="submit" endIcon={<ArrowUpward />} size="medium" color="secondary" className="registerLoginButton" href="/login">Prihlásiť sa</Button>
                 <footer>
                     <div className="registerFooterButton">
-                        <Button href="https://soshe.edupage.org/" size="large" variant="outlined" color="primary"><Home /></Button>
+                        <Button href="/domov" size="large" variant="outlined" color="primary"><Home /></Button>
                     </div>
                 </footer>
             </div>

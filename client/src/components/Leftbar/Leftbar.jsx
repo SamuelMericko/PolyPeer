@@ -9,8 +9,6 @@ const Leftbar = () => {
     return (
         <div className="leftbar">
             <div className="leftbarWrapper">
-                <img src="/images/logo.svg" alt="Polypeer_logo" className="logoDomov" />
-                <hr className="break"/>
                 <div className="menu">
                    < LeftbarMenu/>
                 </div>

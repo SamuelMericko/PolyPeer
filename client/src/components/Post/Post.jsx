@@ -16,28 +16,28 @@ export default function Post({post}) {
     return (
       <div className="post">
         <div className="postWrapper">
-            <div className="postTop">
-                <div className="postTopLeft">
+            <div className="postHore">
+                <div className="postHoreVlavo">
                     <img className="postProfileImage" src={Users.filter(u=>u.id === post.userId)[0].profilePicture} alt="" />
-                    <span className="postUsername">{Users.filter(u=>u.id === post.userId)[0].username}</span>
-                    <span className="postDate">{post.date}</span>
+                    <span className="postMeno">{Users.filter(u=>u.id === post.userId)[0].username}</span>
+                    <span className="postCas">{post.date}</span>
                 </div>
                 <div className="postTopRight">
                     <MoreVert />
                 </div>
             </div>
-            <div className="postCenter">
+            <div className="postStred">
                 <span className="postText">{post?.desc}</span>
                 <img className="postImg" src={post.photo} alt="" />
             </div>
-            <div className="postBottom">
-                <div className="postBottomLeft">
+            <div className="postDole">
+                <div className="postDoleVlavo">
                 <img className="likeIcon" src="assets/like.png" onClick={likeHandler} alt="" />
                 <img className="likeIcon" src="assets/heart.png" onClick={likeHandler} alt="" />
                 <span className="postLikeCounter">{like} ľudom sa to páči</span>
                 </div>
-                <div className="postBottomRight">
-                    <span className="postCommentText">{post.comment} comments</span>
+                <div className="postDoleVpravo">
+                    <span className="postKomentarText">{post.comment} komentárov</span>
                 </div>
             </div>
         </div>

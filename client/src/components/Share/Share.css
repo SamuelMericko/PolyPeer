@@ -48,12 +48,12 @@
     margin-right: 10px;
 }
 
-.shareOptions {
+.shareDetaily {
     display: flex;
     margin-left: 20px;
 }
 
-.shareOption {
+.shareDetail {
     display: flex;
     align-items: center;
     margin-right: 15px;
@@ -65,7 +65,7 @@
     margin-right: 3px;
 }
 
-.shareOptionText {
+.shareDetailText {
     font-size: 14px;
     font-weight: 500;
 }

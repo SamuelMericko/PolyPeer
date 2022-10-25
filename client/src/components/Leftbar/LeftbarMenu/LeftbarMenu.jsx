@@ -45,13 +45,13 @@ export default function LeftbarMenu() {
           </ListItemIcon>
           <ListItemText primary="Stránka školy" />
         </ListItemButton>
-        <ListItemButton sx={{ pl: 4 }}>
+        <ListItemButton sx={{ pl: 4 }} href="https://portal.edupage.org/">
           <ListItemIcon>
             <CastForEducation />
           </ListItemIcon>
           <ListItemText primary="Edupage" />
         </ListItemButton>
-        <ListItemButton sx={{ pl: 4 }} href="https://portal.edupage.org/">
+        <ListItemButton sx={{ pl: 4 }}>
           <ListItemIcon>
             <Settings />
           </ListItemIcon>

@@ -66,12 +66,6 @@
 
 /*ANIMÁCIE*/
 
-@keyframes zvacsenieDomov {
-    0%   {scale: 100%;}
-    33%  {scale: 120%;}
-    100% {scale: 100%;}
-}
-
 @keyframes anim-lineUpDomov {
     0% {
       opacity: 0;
@@ -87,11 +81,5 @@
     100% {
       opacity: 1;
       transform: translateX(0%);
-    }
-}
-
-@media (orientation: landscape) {
-    body {
-      grid-auto-flow: column;
     }
 }

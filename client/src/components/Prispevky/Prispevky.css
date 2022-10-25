@@ -2,4 +2,23 @@
     flex: 5;
     height: 100vh;
     overflow: scroll;
+    animation: 3s anim-lineUpPrispevky ease-out;
+}
+
+@keyframes anim-lineUpPrispevky {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
 }
