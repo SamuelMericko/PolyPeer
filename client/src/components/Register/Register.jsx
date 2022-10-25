@@ -1,6 +1,6 @@
 import React from "react";
 import './Register.css';
-import { Person, Lock, ArrowUpward, Home, Email } from '@mui/icons-material';
+import { Person, Lock, ArrowUpward, Email } from '@mui/icons-material';
 import Button from '@mui/material/Button';
 
 const Register = () => {

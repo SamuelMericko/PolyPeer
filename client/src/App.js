@@ -9,6 +9,7 @@ import Prihlasenie from "./pages/Prihlasenie/Prihlasenie";
 import Registracia from "./pages/Registracia/Registracia";
 import Nenajdene from "./pages/Nenajdene/Nenajdene";
 import Domov from "./pages/Domov/Domov";
+import Profil from "./pages/Profil/Profil";
 
 //Vytvorenie témy stránky
 import { createTheme, ThemeProvider } from '@mui/material';
@@ -29,7 +30,6 @@ const tema = createTheme({
   });
 
   function App() {
-    {/* NACITAVANIE */ }
     const [loading, setLoading] = useState(false);
     
         useEffect(() => {
@@ -49,6 +49,7 @@ const tema = createTheme({
               <Route path="/" element={< Registracia />}/>
               <Route path="/login" element={<Prihlasenie />}/>
               <Route path="/domov" element={<Domov />}/>
+              <Route path="/profil" element={<Profil />}/>
               <Route path="*" element={<Nenajdene />} />
             </Routes>
           )}

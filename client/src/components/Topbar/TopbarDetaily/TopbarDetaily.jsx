@@ -21,7 +21,7 @@ const TopbarDetaily = () => {
             <Fab color="grey" aria-label="edit" size="medium">
                 <Settings />
             </Fab>
-            <Fab size="medium" >
+            <Fab size="medium" href="/profil">
                 <Avatar alt="Safak" src="/assets/person/1.jpeg" className="rightbarProfilePicture"/>
             </Fab> 
         </Box>

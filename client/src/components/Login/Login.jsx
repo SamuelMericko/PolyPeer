@@ -1,6 +1,6 @@
 import React from "react";
 import './Login.css'
-import { Person, Lock, ArrowUpward, Home } from '@mui/icons-material';
+import { Person, Lock, ArrowUpward} from '@mui/icons-material';
 import Button from '@mui/material/Button';
 
 const Login = () => {
@@ -19,7 +19,7 @@ const Login = () => {
                     <br />
                 </div>
                 <br />
-                <span> <a href="https://portal.edupage.org/" className="loginZabudnuteHeslo">Zabudli ste heslo?</a></span>
+                <span> <a href="/login" className="loginZabudnuteHeslo">Zabudli ste heslo?</a></span>
                 <br />
                 <Button variant="contained" type="submit" endIcon={<ArrowUpward />} size="large" className="loginSubmitButton">Odoslať</Button>
             </div>

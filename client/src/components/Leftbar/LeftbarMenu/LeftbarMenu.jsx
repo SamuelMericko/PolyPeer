@@ -21,7 +21,7 @@ export default function LeftbarMenu() {
       </div>
 
      <List sx={{ width: '100%', maxWidth: 360 }}>
-        <ListItemButton sx={{ pl: 4}} href="/login" >
+        <ListItemButton sx={{ pl: 4}} href="/domov" >
           <ListItemIcon>
             <Home color="primary"/>
           </ListItemIcon>
@@ -33,7 +33,7 @@ export default function LeftbarMenu() {
           </ListItemIcon>
           <ListItemText primary="Správy" />
         </ListItemButton>
-        <ListItemButton sx={{ pl: 4 }}>
+        <ListItemButton sx={{ pl: 4 }} href="/profil">
           <ListItemIcon>
             <Person color="primary"/>
           </ListItemIcon>
