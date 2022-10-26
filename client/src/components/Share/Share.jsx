@@ -8,7 +8,7 @@ const Share = () => {
             <div className="shareWrapper">
                 <div className="shareTop">
                     <img className="shareProfileImg" src="/assets/person/1.jpeg" alt="" />
-                    <input placeholder="Napíšte nám niečo!" className="shareInput"/>
+                    <textarea placeholder="Napíšte nám niečo!" className="shareInput"/>
                 </div>
                 <hr className="shareHr"/>
                 <div className="shareBottom">
