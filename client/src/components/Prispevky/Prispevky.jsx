@@ -13,7 +13,7 @@ const Prispevky = ({username}) => {
         const fetchPosts = async () => {
             const res = username 
             ? await axios.get('/posts/profile/' + username) 
-            : await axios.get('/posts/timeline/635977d32b08a54e87a116b3');
+            : await axios.get('/posts/timeline/635974e82b08a54e87a116b0');
             setPrispevky(res.data);
         };
         fetchPosts();
