@@ -46,9 +46,9 @@ const tema = createTheme({
             <Nacitavanie />
           ) : (
             <Routes>
-              <Route path="/" element={< Registracia />}/>
+              <Route path="/" element={<Domov />}/>
               <Route path="/login" element={<Prihlasenie />}/>
-              <Route path="/domov" element={<Domov />}/>
+              <Route path="/registracia" element={<Registracia />}/>
               <Route path="/profil/:meno" element={<Profil />}/>
               <Route path="*" element={<Nenajdene />} />
             </Routes>

@@ -21,7 +21,7 @@ export default function LeftbarMenu() {
       </div>
 
      <List sx={{ width: '100%', maxWidth: 360 }}>
-        <ListItemButton sx={{ pl: 4}} href="/domov" >
+        <ListItemButton sx={{ pl: 4}} href="/" >
           <ListItemIcon>
             <Home color="primary"/>
           </ListItemIcon>
