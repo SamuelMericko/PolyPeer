@@ -7,6 +7,8 @@ import Prispevky from '../../components/Prispevky/Prispevky';
 import RightbarProfil from '../../components/Rightbar/RightbarProfil/RightbarProfil';
 
 export default function Profil() {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
     <>
       <Topbar />
@@ -15,8 +17,8 @@ export default function Profil() {
         <div className="profilVpravo">
             <div className="profilVpravoHore">
                 <div className="profilCover">
-                    <img className="profilCoverImg" src="assets/post/3.jpeg" alt="" />
-                    <img className="profilUserImg" src="assets/person/7.jpeg" alt="" />
+                    <img className="profilCoverImg" src={`${PF}post/3.jpeg`} alt="" />
+                    <img className="profilUserImg" src={`${PF}person/7.jpeg`} alt="" />
                 </div>
                 <div className="profilInfo">
                     <h4 className="profilInfoMeno">Meno</h4>

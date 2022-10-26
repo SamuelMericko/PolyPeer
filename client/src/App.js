@@ -49,7 +49,7 @@ const tema = createTheme({
               <Route path="/" element={< Registracia />}/>
               <Route path="/login" element={<Prihlasenie />}/>
               <Route path="/domov" element={<Domov />}/>
-              <Route path="/profil" element={<Profil />}/>
+              <Route path="/profil/:meno" element={<Profil />}/>
               <Route path="*" element={<Nenajdene />} />
             </Routes>
           )}
