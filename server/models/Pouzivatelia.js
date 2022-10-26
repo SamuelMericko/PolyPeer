@@ -6,69 +6,56 @@ const UserSchema = new mongoose.Schema({
         type: String,
         require: true,
         min: 3,
-        max: 30,
-    },
-    priezvisko: {
-        type: String,
-        require: true,
-        min: 3,
-        max: 30
-    },
-    email: {
+        max: 20,
+        unique: true,
+      },
+      email: {
         type: String,
         required: true,
         max: 50,
-        unique: true
-    },
-    heslo: {
+        unique: true,
+      },
+      heslo: {
         type: String,
         required: true,
-        min: 6
-    },
-    profilovka: {
+        min: 6,
+      },
+      profilovka: {
         type: String,
-        default: ''
-    },
-    cover: {
+        default: "",
+      },
+      coverPicture: {
         type: String,
-        default: ''
-    },
-    sledovatelia: {
+        default: "",
+      },
+      followers: {
         type: Array,
-        default: []
-    },
-    sledovane: {
+        default: [],
+      },
+      followings: {
         type: Array,
-        default: []
-    },
-    isAdmin: {
+        default: [],
+      },
+      isAdmin: {
         type: Boolean,
-        default: false
-    },
-    isZiak: {
-        type: Boolean,
-        default: true
-    },
-    isZamestnanec: {
-        type: Boolean,
-        default: false
-    },
-    popis: {
+        default: false,
+      },
+      popis: {
         type: String,
-        max: 50
-    },
-    mesto: {
+        max: 50,
+      },
+      mesto: {
         type: String,
-        max: 50
-    },
-    skola: {
+        max: 50,
+      },
+      krajina: {
         type: String,
-        max: 50
-    },
-    trieda: {
-        type: String,
-        max: 7
-    }
+        max: 50,
+      },
+      skola: {
+        type: Number,
+        enum: [1, 2, 3],
+      },
 },{timestamps: true});
 
 module.exports = mongoose.model('User', UserSchema);
