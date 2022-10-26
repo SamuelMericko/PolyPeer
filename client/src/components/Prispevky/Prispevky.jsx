@@ -6,16 +6,18 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 
 
-const Prispevky = () => {
+const Prispevky = ({username}) => {
     const [prispevky, setPrispevky] = useState([]);
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const res = await axios.get('posts/timeline/635974e82b08a54e87a116b0');
+            const res = username 
+            ? await axios.get('/posts/profile/' + username) 
+            : await axios.get('/posts/timeline/635977d32b08a54e87a116b3');
             setPrispevky(res.data);
         };
         fetchPosts();
-    },[])
+    },[username])
 
     return (
         <div className="prispevky">

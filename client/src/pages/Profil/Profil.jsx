@@ -26,7 +26,7 @@ export default function Profil() {
                 </div>
             </div>
             <div className="profilVpravoDole">
-                <Prispevky />
+                <Prispevky username="jozkoHrasko"/>
                 <RightbarProfil/>
             </div>
         </div>
