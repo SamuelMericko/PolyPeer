@@ -22,7 +22,7 @@ const Prispevky = () => {
             <div className="prispevkyWrapper">
                 <Share />
                 {prispevky.map((p) => (
-                    <Post key={p.id} post={p}/>
+                    <Post key={p._id} post={p}/>
                 ))}
             </div>
         </div>
