@@ -1,23 +1,25 @@
 import React from 'react';
 import './Profil.css';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router';
 import axios from 'axios';
 import Topbar from '../../components/Topbar/Topbar';
 import Leftbar from '../../components/Leftbar/Leftbar';
 import Prispevky from '../../components/Prispevky/Prispevky';
-import RightbarProfil from '../../components/Rightbar/RightbarProfil/RightbarProfil';
+import Rightbar from '../../components/Rightbar/Rightbar';
 
 export default function Profil() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const [pouzivatel, setPouzivatel] = useState({});
+  const username = useParams().meno;
 
   useEffect(() => {
       const fetchPouzivatel = async () => {
-          const res = await axios.get(`/pouzivatelia?username=jankoMrkvicka`);
+          const res = await axios.get(`/pouzivatelia?username=${username}`);
           setPouzivatel(res.data);
       };
       fetchPouzivatel();
-  },[])
+  },[username])
 
   return (
     <>
@@ -27,8 +29,8 @@ export default function Profil() {
         <div className="profilVpravo">
             <div className="profilVpravoHore">
                 <div className="profilCover">
-                    <img className="profilCoverImg" src={`${PF}post/3.jpeg`} alt="" />
-                    <img className="profilUserImg" src={`${PF}person/7.jpeg`} alt="" />
+                    <img className="profilCoverImg" src={pouzivatel.coverPicture || PF+"noCover.png"} alt="" />
+                    <img className="profilUserImg" src={pouzivatel.profilovka || PF+"noAvatar.png"} alt="" />
                 </div>
                 <div className="profilInfo">
                     <h4 className="profilInfoMeno">{pouzivatel.meno}</h4>
@@ -36,8 +38,8 @@ export default function Profil() {
                 </div>
             </div>
             <div className="profilVpravoDole">
-                <Prispevky username="jozkoHrasko"/>
-                <RightbarProfil/>
+                <Prispevky username={username}/>
+                <Rightbar user={pouzivatel}/>
             </div>
         </div>
       </div>

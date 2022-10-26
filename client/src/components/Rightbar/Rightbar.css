@@ -1,11 +1,30 @@
 .rightbar {
     flex: 2.5;
-    margin: 10px;
     animation: 3s anim-lineUpRightbar ease-out;
 }
 
 .rightbarWrapper {
-    padding: 20px 20px 0 0;
+    padding-left: 10px;
+    padding-top: 15px;
+}
+
+.rightbarDetailyWrapper {
+    justify-content: end;
+}
+
+.rightbarBreak {
+    width: 90%;
+    margin: 30px 0 30px 0;
+}
+
+.ilustraciaWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.rightbarIlustracia {
+    border-radius: 20px;
+    width: 450px;
 }
 
 .rightbarNazov {
@@ -13,7 +32,6 @@
     font-size: 22px;
     font-weight: 500;
 }
-
 .rightbarInfo {
     margin-bottom: 30px;
 }
@@ -60,26 +78,8 @@
 
 .rightbarFriendList {
     height: 47vh;
-    overflow: scroll;
     padding: 0;
     margin: 0;
     list-style: none;
-}
-
-@keyframes anim-lineUpRightbar {
-    0% {
-      opacity: 0;
-      transform: translatex(80%);
-    }
-    20% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
-    }
+    overflow: scroll;
 }

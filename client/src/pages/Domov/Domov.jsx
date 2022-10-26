@@ -4,7 +4,7 @@ import './Domov.css';
 // Komponenty
 import Leftbar from '../../components/Leftbar/Leftbar';
 import Prispevky from '../../components/Prispevky/Prispevky';
-import RightbarDomov from "../../components/Rightbar/RightbarDomov/RightbarDomov";
+import Rightbar from "../../components/Rightbar/Rightbar";
 import Topbar from "../../components/Topbar/Topbar";
 
 
@@ -15,7 +15,7 @@ const Domov = () => {
             <div className="domovContainer">
                 <Leftbar />
                 <Prispevky />
-                <RightbarDomov />
+                <Rightbar />
             </div>
         </>
     );
