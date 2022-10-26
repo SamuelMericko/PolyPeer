@@ -1,13 +1,23 @@
 import React from 'react';
+import axios from 'axios';
 import { MoreVert } from '@mui/icons-material';
 import './Post.css';
-import { Users } from '../../dummyData';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Post({post}) {
     const [like, setLike] = useState(post.like);
     const [isLiked, setIsLiked] = useState(false);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
+    const [pouzivatel, setPouzivatel] = useState({});
+
+    useEffect(() => {
+        const fetchPouzivatel = async () => {
+            const res = await axios.get(`pouzivatelia/${post.userId}`);
+            setPouzivatel(res.data);
+        };
+        fetchPouzivatel();
+    },[])
 
     const likeHandler = () => {
         setLike(isLiked ? like - 1 : like + 1);
@@ -19,8 +29,8 @@ export default function Post({post}) {
         <div className="postWrapper">
             <div className="postHore">
                 <div className="postHoreVlavo">
-                    <img className="postProfileImage" src={Users.filter(u=>u.id === post.userId)[0].profilePicture} alt="" />
-                    <span className="postMeno">{Users.filter(u=>u.id === post.userId)[0].username}</span>
+                    <img className="postProfileImage" src={pouzivatel.profilovka} alt="" />
+                    <span className="postMeno">{pouzivatel.meno}</span>
                     <span className="postCas">{post.date}</span>
                 </div>
                 <div className="postTopRight">
@@ -28,7 +38,7 @@ export default function Post({post}) {
                 </div>
             </div>
             <div className="postStred">
-                <span className="postText">{post?.desc}</span>
+                <span className="postText">{post?.popis}</span>
                 <img className="postImg" src={PF + post.photo} alt="" />
             </div>
             <div className="postDole">

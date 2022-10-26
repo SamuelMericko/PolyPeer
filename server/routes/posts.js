@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const Post = require('../models/Post')
+const Post = require('../models/Post');
+const Pouzivatelia = require("../models/Pouzivatelia");
 
 // Vytvorenie postu
 router.post('/',async (req, res) => {
@@ -71,18 +72,19 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// get all posts
-router.get('/nastenka/all', async (req, res) => {
+// get timeline
+router.get("/timeline/:userId", async (req, res) => {
     try {
-        const currentUser = await User.findById(req.body.userId);
-        const userPost = await Post.find({userId: currentUser._id});
-        const firendPosts = await Promise.all()
-            currentUser.sledovane.map(friendId => {
-                return Post.find({userId: friendId});
-            });
-            res.json(userPost.concat(...firendPosts));
-    } catch(err) {
-        res.status(200).json(err);
+      const currentUser = await Pouzivatelia.findById(req.params.userId);
+      const userPosts = await Post.find({ userId: currentUser._id });
+      const friendPosts = await Promise.all(
+        currentUser.followings.map((friendId) => {
+          return Post.find({ userId: friendId });
+        })
+      );
+      res.status(200).json(userPosts.concat(...friendPosts))
+    } catch (err) {
+      res.status(500).json(err);
     }
 });
 
