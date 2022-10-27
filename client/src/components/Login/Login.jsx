@@ -5,9 +5,7 @@ import Button from '@mui/material/Button';
 import { useRef } from "react";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from '../../context/AuthContext';
-import CircularProgress, {
-  CircularProgressProps,
-} from '@mui/material/CircularProgress';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Login = () => {
     const email = useRef();
