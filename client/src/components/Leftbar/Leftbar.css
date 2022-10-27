@@ -64,6 +64,11 @@
     list-style: none;
 }
 
+.leftbarLinkToProfile {
+    text-decoration: none;
+    color: black;
+}
+
 /*ANIMÁCIE*/
 
 @keyframes anim-lineUpDomov {

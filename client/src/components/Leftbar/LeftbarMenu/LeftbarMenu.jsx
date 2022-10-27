@@ -10,8 +10,12 @@ import Person from '@mui/icons-material/Person';
 import School from '@mui/icons-material/School';
 import CastForEducation from '@mui/icons-material/CastForEducation';
 import Settings from '@mui/icons-material/Settings';
+import { useContext } from 'react';
+import { AuthContext } from '../../../context/AuthContext';
+import { Link } from 'react-router-dom';
 
 export default function LeftbarMenu() {
+  const {user} = useContext(AuthContext);
 
   return (
     <>
@@ -33,12 +37,14 @@ export default function LeftbarMenu() {
           </ListItemIcon>
           <ListItemText primary="Správy" />
         </ListItemButton>
-        <ListItemButton sx={{ pl: 4 }} href="/profil">
-          <ListItemIcon>
-            <Person color="primary"/>
-          </ListItemIcon>
-          <ListItemText primary="Profil" />
-        </ListItemButton>
+        <Link to={`/profil/${user.meno}`} className="leftbarLinkToProfile">
+          <ListItemButton sx={{ pl: 4 }}> 
+              <ListItemIcon>
+                <Person color="primary"/>
+              </ListItemIcon>
+              <ListItemText primary="Profil" />
+          </ListItemButton>
+        </Link>
         <ListItemButton sx={{ pl: 4 }} href="https://soshe.edupage.org/">
           <ListItemIcon>
             <School color="primary"/>
