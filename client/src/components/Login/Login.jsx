@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import './Login.css'
-import { Person, Lock, ArrowUpward} from '@mui/icons-material';
+import { Email, Lock, ArrowUpward} from '@mui/icons-material';
 import Button from '@mui/material/Button';
 import { useRef } from "react";
 import { loginCall } from "../../apiCalls";
@@ -24,7 +24,7 @@ const Login = () => {
 
             <form className="loginForm" onSubmit={handleClick}>
                 <div className="loginFormPole">
-                    <Person className="loginIcon"/>
+                    <Email className="loginIcon"/>
                     <input type="email" placeholder="Email" ref={email} required/>
                 </div>
                 <div className="loginFormPole">

@@ -1,23 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import './Prispevky.css';
 import Post from '../Post/Post';
 import Share from '../Share/Share';
 import { useState, useEffect } from "react";
 import axios from 'axios';
+import { AuthContext } from "../../context/AuthContext";
 
 
 const Prispevky = ({username}) => {
     const [prispevky, setPrispevky] = useState([]);
+    const {user} = useContext(AuthContext);
 
     useEffect(() => {
         const fetchPosts = async () => {
             const res = username 
             ? await axios.get('/posts/profile/' + username) 
-            : await axios.get('/posts/timeline/635aa64302dfc3728313516b');
+            : await axios.get('posts/timeline/' + user._id);
             setPrispevky(res.data);
         };
         fetchPosts();
-    },[username])
+    },[username, user._id])
 
     return (
         <div className="prispevky">
