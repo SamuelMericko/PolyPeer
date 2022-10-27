@@ -56,7 +56,7 @@ export default function Post({post}) {
                 </div>
             </div>
             <div className="postStred">
-                <span className="postText">{post?.popis}</span>
+                <span className="postText">{post.popis}</span>
                 <img className="postImg" src={PF + post.img || PIMG + post.img} alt="" />
             </div>
             <div className="postDole">

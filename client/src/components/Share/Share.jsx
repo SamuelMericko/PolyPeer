@@ -14,7 +14,7 @@ const Share = () => {
         e.preventDefault();
         const newPost = {
           userId: user._id,
-          desc: popis.current.value,
+          popis: popis.current.value,
         };
         if (file) {
           const data = new FormData();
