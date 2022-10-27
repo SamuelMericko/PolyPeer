@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import './Login.css'
 import { Person, Lock, ArrowUpward} from '@mui/icons-material';
 import Button from '@mui/material/Button';
 import { useRef } from "react";
+import { loginCall } from "../../apiCalls";
+import { AuthContext } from '../../context/AuthContext';
 
 const Login = () => {
     const email = useRef();
     const heslo = useRef();
+    const {user, isFetching, error, dispatch} = useContext(AuthContext);
+
     const handleClick = (e) => {
         e.preventDefault();
-        console.log(email.current.value);
+        loginCall({email:email.current.value, heslo:heslo.current.value}, dispatch);
     }
 
+    console.log(user);
     return (
         <div className="login">
             <img src="/images/logo.svg" alt="Polypeer_logo" className="loginLogo" width="70%" />

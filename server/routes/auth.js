@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 
 // Registrácia
-router.post('/registracia', async (req, res) => {
+router.post('/register', async (req, res) => {
     try {
         // Vytvorenie hashovaného hesla
         const salt = await bcrypt.genSalt(10);
@@ -26,7 +26,7 @@ router.post('/registracia', async (req, res) => {
 });
 
 // Prihlásenie
-router.post('/prihlasenie', async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
         // Email 
         const pouzivatel = await Pouzivatel.findOne({email:req.body.email});
