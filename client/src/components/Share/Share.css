@@ -80,3 +80,7 @@
     cursor: pointer;
     color: white;
 }
+
+#file {
+    display: none;
+}
