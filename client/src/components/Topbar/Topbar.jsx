@@ -8,7 +8,7 @@ const Topbar = () => {
         <div className="topbar">
             <div className="topbarWrapper">
                 <div className="topbarText">
-                    <p><a href="/domov" style={{textDecoration: 'none', color: 'white'}}>PolyPeer</a></p>
+                    <p><a href="/" style={{textDecoration: 'none', color: 'white'}}>PolyPeer</a></p>
                 </div>
 
                 <div className="topbarStred">
