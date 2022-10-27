@@ -81,6 +81,14 @@
     top: 20px
 }
 
+.loginSubmitButton:disabled {
+    cursor: not-allowed;
+}
+
 .loginRegisterButton {
     top: 40px
+}
+
+.loginRegisterButton:disabled {
+    cursor: not-allowed;
 }

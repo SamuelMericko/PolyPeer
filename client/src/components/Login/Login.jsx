@@ -5,6 +5,9 @@ import Button from '@mui/material/Button';
 import { useRef } from "react";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from '../../context/AuthContext';
+import CircularProgress, {
+  CircularProgressProps,
+} from '@mui/material/CircularProgress';
 
 const Login = () => {
     const email = useRef();
@@ -34,9 +37,9 @@ const Login = () => {
                 <br />
                 <span> <a href="/login" className="loginZabudnuteHeslo">Zabudli ste heslo?</a></span>
                 <br />
-                <Button variant="contained" color="primary" type="submit" endIcon={<ArrowUpward />} size="large" className="loginSubmitButton">Odoslať</Button>
+                <Button variant="contained" color="primary" type="submit" endIcon={<ArrowUpward />} size="large" disabled={isFetching} className="loginSubmitButton">{isFetching ? <CircularProgress color='inherit' size={20}/> : "Odoslať"}</Button>
                 <br />
-                <Button variant="contained" color="secondary" href="/registracia" endIcon={<ArrowUpward />} size="medium" className="loginRegisterButton">Vytvoriť si účet</Button>
+                <Button variant="contained" color="secondary" href="/registracia" endIcon={<ArrowUpward />} size="medium" disabled={isFetching} className="loginRegisterButton">{isFetching ? <CircularProgress color='inherit' size={20}/> : "Vytvoriť si účet"}</Button>
             </form>
         </div>
     );
