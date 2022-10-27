@@ -78,5 +78,9 @@
 }
 
 .loginSubmitButton{
-    top: 20px;
+    top: 20px
+}
+
+.loginRegisterButton {
+    top: 40px
 }
