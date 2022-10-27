@@ -1,7 +1,7 @@
 // Knižnice
-import React from "react";
+import React, { useContext } from "react";
 import { useEffect, useState } from "react";
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Redirect } from 'react-router-dom';
 import './App.css';
 
 // Stránky
@@ -15,6 +15,7 @@ import Profil from "./pages/Profil/Profil";
 import { createTheme, ThemeProvider } from '@mui/material';
 import { green } from "@mui/material/colors";
 import Nacitavanie from "./components/Nacitavanie/Nacitavanie";
+import { AuthContext } from "./context/AuthContext";
 
 const tema = createTheme({
     palette: {
@@ -30,6 +31,8 @@ const tema = createTheme({
   });
 
   function App() {
+    const {user} = useContext(AuthContext)
+
     const [loading, setLoading] = useState(false);
     
         useEffect(() => {
@@ -46,9 +49,9 @@ const tema = createTheme({
             <Nacitavanie />
           ) : (
             <Routes>
-              <Route path="/" element={<Domov />}/>
-              <Route path="/login" element={<Prihlasenie />}/>
-              <Route path="/registracia" element={<Registracia />}/>
+              <Route path="/" element={user ? <Domov /> : <Prihlasenie/>}/>
+              <Route path="/login" element={user ? <Domov/> : <Prihlasenie />}/>
+              <Route path="/registracia" element={user ? <Domov/> : <Registracia />}/>
               <Route path="/profil/:meno" element={<Profil />}/>
               <Route path="*" element={<Nenajdene />} />
             </Routes>
