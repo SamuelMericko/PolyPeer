@@ -26,6 +26,8 @@ export default function Post({post}) {
         setIsLiked(!isLiked);
     }
 
+    console.log(pouzivatel);
+
     return (
       <div className="post">
         <div className="postWrapper">

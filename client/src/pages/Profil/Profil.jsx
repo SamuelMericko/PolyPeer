@@ -17,6 +17,7 @@ export default function Profil() {
       const fetchPouzivatel = async () => {
           const res = await axios.get(`/pouzivatelia?username=${username}`);
           setPouzivatel(res.data);
+          console.log(username);
       };
       fetchPouzivatel();
   },[username])

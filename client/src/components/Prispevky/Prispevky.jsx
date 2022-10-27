@@ -13,10 +13,12 @@ const Prispevky = ({username}) => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const res = username 
+            const res = username
             ? await axios.get('/posts/profile/' + username) 
-            : await axios.get('posts/timeline/' + user._id);
+            : await axios.get('/posts/timeline/' + user._id);
             setPrispevky(res.data);
+            console.log(username);
+            console.log(user._id);
         };
         fetchPosts();
     },[username, user._id])

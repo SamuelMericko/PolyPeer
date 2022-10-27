@@ -89,13 +89,13 @@ router.get("/timeline/:userId", async (req, res) => {
 });
 
 // get user posts
-router.get("/profile/:username", async (req, res) => {
+router.get("/profile/:meno", async (req, res) => {
     try {
-      const pouzivatel = await Pouzivatelia.findOne({username:req.params.meno});
-      const posts = await Post.find({userId:pouzivatel._id});
+      const user = await Pouzivatelia.findOne({meno:req.params.meno});
+      const posts = await Post.find({userId:user._id});
       res.status(200).json(posts);
     } catch (err) {
-      res.status(500).json('ahoj');
+      res.status(500).json(err);
     }
 });
 module.exports = router;
