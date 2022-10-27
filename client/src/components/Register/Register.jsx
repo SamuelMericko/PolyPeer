@@ -8,35 +8,35 @@ const Register = () => {
         <div className="register">
             <img src="/images/logo.svg" alt="Polypeer_logo" className="registerLogo" width="70%"/>
 
-            <div className="registerForm">
+            <form className="registerForm">
                  {/* Prihlasovacie meno */}
                 <div className="registerFormPole">
                     <Person className="registerIcon"/>
-                    <input type="text" placeholder="Prihlasovacie meno" />
+                    <input type="text" placeholder="Prihlasovacie meno" required minLength={3}/>
                 </div>
                 {/* Email */}
                 <div className="registerFormPole">
                     <Email className="registerIcon"/>
-                    <input type="email" placeholder="Email" />
+                    <input type="email" placeholder="Email" required/>
                     <br />
                 </div>
                 {/* Heslo */}
                 <div className="registerFormPole">
                     <Lock className="registerIcon"/>
-                    <input type="password" placeholder="Heslo" />
+                    <input type="password" placeholder="Heslo" minLength={8} required/>
                     <br />
                 </div>
                 {/* Zopakujte heslo */}
                 <div className="registerFormPole">
                     <Lock className="registerIcon"/>
-                    <input type="password" placeholder="Zopakujte heslo" />
+                    <input type="password" placeholder="Zopakujte heslo" minLength={8} required/>
                     <br />
                 </div>
                 <br />
                 <Button variant="contained" type="submit" endIcon={<ArrowUpward />} size="large" className="registerSubmitButton">Registrovať sa</Button>
                 <br />
                 <Button variant="contained" type="submit" endIcon={<ArrowUpward />} size="medium" color="secondary" className="registerLoginButton" href="/login">Prihlásiť sa</Button>
-            </div>
+            </form>
         </div>
     );
 }

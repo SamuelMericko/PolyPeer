@@ -31,7 +31,7 @@ const Login = () => {
                 <br />
                 <Button variant="contained" color="primary" type="submit" endIcon={<ArrowUpward />} size="large" className="loginSubmitButton">Odoslať</Button>
                 <br />
-                <Button variant="contained" color="secondary" type="submit" endIcon={<ArrowUpward />} size="medium" className="loginRegisterButton">Vytvoriť si účet</Button>
+                <Button variant="contained" color="secondary" href="/registracia" endIcon={<ArrowUpward />} size="medium" className="loginRegisterButton">Vytvoriť si účet</Button>
             </form>
         </div>
     );
