@@ -11,6 +11,7 @@ export default function Post({post}) {
     const [like, setLike] = useState(post.likes.length);
     const [isLiked, setIsLiked] = useState(false);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const PIMG = process.env.REACT_APP_POSTIMG_FOLDER;
     const {user} = useContext(AuthContext);
 
     const [pouzivatel, setPouzivatel] = useState({});
@@ -56,7 +57,7 @@ export default function Post({post}) {
             </div>
             <div className="postStred">
                 <span className="postText">{post?.popis}</span>
-                <img className="postImg" src={PF + post.img} alt="" />
+                <img className="postImg" src={PF + post.img || PIMG + post.img} alt="" />
             </div>
             <div className="postDole">
                 <div className="postDoleVlavo">

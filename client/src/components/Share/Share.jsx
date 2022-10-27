@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from 'react';
 import './Share.css';
-import {PermMedia, Label, Room, EmojiEmotions} from '@mui/icons-material';
+import {PermMedia, Label, Room, EmojiEmotions, WindowSharp} from '@mui/icons-material';
 import {AuthContext} from '../../context/AuthContext';
 import axios from 'axios';
 
@@ -10,19 +10,28 @@ const Share = () => {
     const popis = useRef()
     const [file, setFile] = useState(null)
 
-    const submitHandler = async (e) =>{
+    const submitHandler = async (e) => {
         e.preventDefault();
         const newPost = {
-            userId: user._id,
-            popis: popis.current.value
+          userId: user._id,
+          desc: popis.current.value,
         };
-
-        try {
-            await axios.post("/posts", newPost)
-        } catch(err) {
-
+        if (file) {
+          const data = new FormData();
+          const fileName = Date.now() + file.name;
+          data.append("name", fileName);
+          data.append("file", file);
+          newPost.img = fileName;
+          console.log(newPost);
+          try {
+            await axios.post("/upload", data);
+          } catch (err) {}
         }
-    }
+        try {
+          await axios.post("/posts", newPost);
+          window.location.reload();
+        } catch (err) {}
+      };
 
     return (
         <div className="share">

@@ -10,10 +10,14 @@ const userRoute = require('./routes/pouzivatelia');
 const authRoute = require('./routes/auth');
 const postRoute = require('./routes/posts');
 const errorRoute = require('./routes/errors');
+const multer = require('multer');
+const path = require('path');
 
 // inicializácia aplikácie
 const app = express();
 dotenv.config();
+
+
 
 
 // Middleware
@@ -21,6 +25,26 @@ app.use(express.json());
 app.use(helmet());
 app.use(morgan('common'));
 
+// Ulozisko pre posty
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "../client/public/assets");
+  },
+  filename: (req, file, cb) => {
+    cb(null, req.body.name);
+  },
+});
+
+const upload = multer({ storage: storage });
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  try {
+    return res.status(200).json("Súbor sa úspešne nahral");
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+app.use('/images', express.static(path.join(__dirname, "public/images/posts")));
 app.use('/api/pouzivatelia', userRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/posts', postRoute);

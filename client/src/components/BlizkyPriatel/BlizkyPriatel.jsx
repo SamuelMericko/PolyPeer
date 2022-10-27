@@ -3,6 +3,7 @@ import './BlizkyPriatel.css';
 
 const BlizkyPriatel = ({user}) => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    console.log(user.profilePicture);
 
     return (
         <li className="blizkyPriatel">
