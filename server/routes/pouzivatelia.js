@@ -45,7 +45,7 @@ router.get('/', async (req, res) => {
     try {
         const user = userId
             ? await Pouzivatel.findById(userId)
-            : await Pouzivatel.findOne({username: username});
+            : await Pouzivatel.findOne({meno: username});
         const {heslo, updatedAt, ...other} = user._doc;
         res.status(200).json(other);
     } catch(err) {
