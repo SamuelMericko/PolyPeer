@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import axios from 'axios';
 import { MoreVert } from '@mui/icons-material';
 import './Post.css';
 import { useState, useEffect } from 'react';
 import { format } from 'timeago.js';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
 export default function Post({post}) {
     const [like, setLike] = useState(post.likes.length);
     const [isLiked, setIsLiked] = useState(false);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const {user} = useContext(AuthContext);
 
     const [pouzivatel, setPouzivatel] = useState({});
+
+    useEffect(() => {
+        setIsLiked(post.likes.includes(user._id))
+    },[user._id, post.likes]);
 
     useEffect(() => {
         const fetchPouzivatel = async () => {
@@ -22,6 +28,11 @@ export default function Post({post}) {
     },[post.userId])
 
     const likeHandler = () => {
+        try{
+            axios.put("posts/" + post._id + "/like", {userId:user._id})
+        } catch(err) {
+
+        }
         setLike(isLiked ? like - 1 : like + 1);
         setIsLiked(!isLiked);
     }
@@ -34,7 +45,7 @@ export default function Post({post}) {
             <div className="postHore">
                 <div className="postHoreVlavo">
                     <Link to={`profil/${pouzivatel.meno}`}>
-                        <img className="postProfileImage" src={pouzivatel.profilovka || PF+"noAvatar.png"} alt="" />
+                        <img className="postProfileImage" src={pouzivatel.profilovka ? PF+pouzivatel.profilovka : PF+"noAvatar.png"} alt="" />
                     </Link>
                     <span className="postMeno">{pouzivatel.meno}</span>
                     <span className="postCas">{format(post.createdAt)}</span>
