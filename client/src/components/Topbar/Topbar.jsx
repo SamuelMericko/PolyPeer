@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import './Topbar.css';
 import { Search, Person, Chat, Notifications } from "@mui/icons-material";
 import TopbarDetaily from "../Topbar/TopbarDetaily/TopbarDetaily";
+import { AuthContext } from "../../context/AuthContext";
 
 const Topbar = () => {
+
     return (
         <div className="topbar">
             <div className="topbarWrapper">
