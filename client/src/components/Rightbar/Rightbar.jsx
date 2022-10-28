@@ -16,7 +16,6 @@ const [followed, setFollowed] = useState(false);
 
   useEffect(() => {
     setFollowed(currentUser.followings.includes(user?._id)); 
-    console.log(currentUser._id, user?._id)
   }, [currentUser, user?._id])
 
 useEffect(() => {
@@ -25,7 +24,6 @@ useEffect(() => {
       const friendList = await axios.get("/pouzivatelia/friends/" + user?._id)
       setFriends(friendList.data);
     } catch(err) {
-      console.log(err);
     }
   };
   getFriends();

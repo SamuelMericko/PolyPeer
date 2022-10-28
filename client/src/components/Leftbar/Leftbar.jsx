@@ -4,8 +4,20 @@ import BlizkyPriatel from "../BlizkyPriatel/BlizkyPriatel";
 import { Users } from "../../dummyData";
 import LeftbarMenu from "./LeftbarMenu/LeftbarMenu";
 import { Group } from '@mui/icons-material';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Leftbar = () => {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            const res = await axios.get('pouzivatelia/allusers/');
+            setUsers(res.data)
+        }
+        fetchUsers();
+    },[]);
+
     return (
         <div className="leftbar">
             <div className="leftbarWrapper">
@@ -21,8 +33,8 @@ const Leftbar = () => {
                 </div>
                 
                 <ul className="blizkiPriatelia">
-                {Users.map((u)=> (
-                    <BlizkyPriatel key={u.id} user={u}/>
+                {users.map((u) => (
+                    <BlizkyPriatel key={u._id} user={u}/>
                 ))}
                 </ul>
             </div>

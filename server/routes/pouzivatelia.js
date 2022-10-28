@@ -74,6 +74,17 @@ router.get('/', async (req, res) => {
     }
 });
 
+//get all
+router.get('/allusers', async (req,res) =>{ 
+    try {
+        const users = await Pouzivatelia.find({}).sort({createdAt: -1});
+
+        res.status(200).json(users);
+    } catch(err) {
+        res.status(500).json(err)
+    }
+});
+
 // Sledovanie
 router.put('/:id/follow', async (req, res) => {
     if(req.body.userId !== req.params.id) {
