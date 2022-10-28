@@ -1,13 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Rightbar.css';
 import { Users } from '../../dummyData';
 import Online from '../Online/Online';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
+import { Button } from '@mui/material';
+import { Add, Remove } from '@mui/icons-material';
 
 export default function Rightbar({ user }) {
 const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 const [friends, setFriends] = useState([]);
+const {user:currentUser, dispatch} = useContext(AuthContext);
+const [followed, setFollowed] = useState(currentUser.followings.includes(user?.id));
+
+useEffect(() => {
+  setFollowed(currentUser.followings.includes(user?.id));
+},[currentUser, user]);
 
 useEffect(() => {
   const getFriends = async () => {
@@ -20,6 +29,21 @@ useEffect(() => {
   };
   getFriends();
 }, [user]);
+
+const handleClick = async () => {
+  try {
+    if(followed) {
+      await axios.put("/pouzivatelia/"+user._id+"/unfollow", {data:{userId: currentUser._id}});
+      dispatch({type: "UNFOLLOW", payload:user._id});
+    } else {
+      await axios.put("/pouzivatelia/"+user._id+"/follow", {data:{userId: currentUser._id}});
+      dispatch({type:"FOLLOW", payload:user._id});
+    }
+  } catch(err) {
+    console.log(err)
+  }
+  setFollowed(!followed);
+}
 
   const DomovRightBar = () => {
     return(
@@ -47,6 +71,12 @@ useEffect(() => {
   const ProfilRightBar = () => {
     return (
       <>
+      {user.meno !== currentUser.meno && (
+        <Button className="rightbarFollowButton" variant="contained" onClick={handleClick}>
+          {followed ? "Zrušiť sledovanie" : "Sledovať"}
+          {followed ? <Remove /> : <Add />}
+          </Button>
+      )}
       <h4 className="rightbarNazov">Informácie o používateľovi</h4>
       <div className="rightbarInfo">
         <div className="rightbarInfoItem">
@@ -65,7 +95,7 @@ useEffect(() => {
       <h4 className="rightbarNazov">Sledovatelia používateľa</h4>
       <div className="rightbarFollowings">
         {friends.map(friend=>(
-        <Link to={"/profil/" + friend.meno}>
+        <Link to={"/profil/" + friend.meno} style={{textDecoration: "none", color:"black"}}>
           <div className="rightbarFollowing">
             <img className="rightbarFollowingImg" src={friend.profilovka ? PF+friend.profilovka : PF+"noAvatar.png"} alt="" />
             <span className="rightbarFollowingName">{friend.meno}</span>

@@ -26,7 +26,7 @@ const Prispevky = ({username}) => {
     return (
         <div className="prispevky">
             <div className="prispevkyWrapper">
-                <Share />
+                {(!username || username === user.meno) && <Share />}
                 {prispevky.map((p) => (
                     <Post key={p._id} post={p}/>
                 ))}

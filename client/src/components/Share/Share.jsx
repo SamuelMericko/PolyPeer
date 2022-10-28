@@ -3,6 +3,7 @@ import './Share.css';
 import {PermMedia, Label, Room, EmojiEmotions, WindowSharp} from '@mui/icons-material';
 import {AuthContext} from '../../context/AuthContext';
 import { Button } from '@mui/material';
+import { Cancel } from '@mui/icons-material';
 import axios from 'axios';
 
 const Share = () => {
@@ -42,6 +43,12 @@ const Share = () => {
                     <input placeholder="Napíšte nám niečo!" className="shareInput" ref={popis}/>
                 </div>
                 <hr className="shareHr"/>
+                {file && (
+                  <div className="shareImgContainer">
+                    <img src={URL.createObjectURL(file)} alt="" className="shareImg" />
+                    <Cancel className="shareCancelImg" onClick={() => setFile(null)}/>
+                  </div>
+                )}
                 <form className="shareBottom" onSubmit={submitHandler}>
                     <div className="shareDetaily">
                         <label htmlFor="file" className="shareDetail">

@@ -85,6 +85,10 @@
     overflow: scroll;
 }
 
+.rightbarFollowButton {
+    bottom: 20px;
+}
+
 @keyframes anim-lineUpRightbar {
     0% {
       opacity: 0;
