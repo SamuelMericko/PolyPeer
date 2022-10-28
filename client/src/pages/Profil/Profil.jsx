@@ -30,8 +30,8 @@ export default function Profil() {
         <div className="profilVpravo">
             <div className="profilVpravoHore">
                 <div className="profilCover">
-                    <img className="profilCoverImg" src={pouzivatel.coverPicture || PF+"noCover.png"} alt="" />
-                    <img className="profilUserImg" src={pouzivatel.profilovka || PF+"noAvatar.png"} alt="" />
+                    <img className="profilCoverImg" src={pouzivatel.coverPicture ? PF+pouzivatel.coverPicture : PF+"noCover.png"} alt="" />
+                    <img className="profilUserImg" src={pouzivatel.profilovka ? PF+pouzivatel.profilovka : PF+"noAvatar.png"} alt="" />
                 </div>
                 <div className="profilInfo">
                     <h4 className="profilInfoMeno">{pouzivatel.meno}</h4>

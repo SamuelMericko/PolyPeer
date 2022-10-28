@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Pouzivatel = require('../models/Pouzivatelia');
 const bcrypt = require('bcrypt');
+const Pouzivatelia = require('../models/Pouzivatelia');
 
 // Aktualizácia účtu
 router.put('/:id', async (req, res) => {
@@ -37,6 +38,28 @@ router.delete('/:id', async (req, res) => {
         return res.status(403).json('Odstrániť môžete iba svoj vlastný účet!');
     }
 });
+
+//get followers
+router.get("/friends/:userId", async (req, res) => {
+    try {
+        const user = await Pouzivatelia.findById(req.params.userId);
+        const friends = await Promise.all(
+            user.followings.map(friendId => {
+                return Pouzivatel.findById(friendId)
+            })
+        );
+        let friendList = [];
+        friends.map(friend => {
+            const {_id, meno, profilovka} = friend;
+            friendList.push({_id, meno, profilovka});
+        });
+        res.status(200).json(friendList);
+    } catch(err) {
+        res.status(500).json(err);
+    }
+});
+
+//get all users
 
 // get one
 router.get('/', async (req, res) => {
