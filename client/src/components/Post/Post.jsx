@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import { format } from 'timeago.js';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function Post({post}) {
     const [like, setLike] = useState(post.likes.length);
@@ -32,10 +34,18 @@ export default function Post({post}) {
         try{
             axios.put("posts/" + post._id + "/like", {userId:user._id})
         } catch(err) {
-
+            console.log(err)
         }
         setLike(isLiked ? like - 1 : like + 1);
         setIsLiked(!isLiked);
+    }
+
+    const deletePost = () => {
+        try{
+            axios.delete('posts/'+ post._id, {data: {userId:user._id}})
+        } catch(err) {
+            console.log(err);
+        }
     }
 
     console.log(pouzivatel);
@@ -52,7 +62,9 @@ export default function Post({post}) {
                     <span className="postCas">{format(post.createdAt)}</span>
                 </div>
                 <div className="postTopRight">
-                    <MoreVert />
+                <IconButton aria-label="delete">
+                    <DeleteIcon onClick={deletePost}/>
+                </IconButton>
                 </div>
             </div>
             <div className="postStred">
@@ -64,9 +76,6 @@ export default function Post({post}) {
                 <img className="likeIcon" src={`${PF}like.png`} onClick={likeHandler} alt="" />
                 <img className="likeIcon" src={`${PF}heart.png`} onClick={likeHandler} alt="" />
                 <span className="postLikeCounter">{like} ľudom sa to páči</span>
-                </div>
-                <div className="postDoleVpravo">
-                    <span className="postKomentarText">{post.comment} komentárov</span>
                 </div>
             </div>
         </div>
