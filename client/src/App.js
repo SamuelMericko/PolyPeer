@@ -1,7 +1,7 @@
 // Knižnice
 import React, { useContext } from "react";
 import { useEffect, useState } from "react";
-import { Route, Routes, Redirect } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
 // Stránky
