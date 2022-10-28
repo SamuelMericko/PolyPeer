@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 30px;
+    text-decoration: none;
 }
 
 .blizkyPriatelImg {
@@ -13,7 +14,9 @@
 }
 
 .blizkyPriatelMeno {
-    font-size: 17px;
+    position:fixed;
+    margin-top: 4px;
+    font-size: 20px;
 }
 
 .blizkyPriatel:hover {

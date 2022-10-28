@@ -16,7 +16,7 @@ const Leftbar = () => {
             setUsers(res.data)
         }
         fetchUsers();
-    },[]);
+    },[1]);
 
     return (
         <div className="leftbar">
@@ -29,7 +29,7 @@ const Leftbar = () => {
 
                 <div className="blizkiPriateliaWrapper">
                     <Group className="blizkiPriateliaIcon"/>
-                    <h2 className="blizkiPriateliaNazov">Blízki priatelia</h2>
+                    <h2 className="blizkiPriateliaNazov">Používatelia PolyPeer</h2>
                 </div>
                 
                 <ul className="blizkiPriatelia">

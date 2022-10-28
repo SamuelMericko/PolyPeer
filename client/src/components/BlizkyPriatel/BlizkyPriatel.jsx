@@ -7,7 +7,7 @@ const BlizkyPriatel = ({user}) => {
 
     return (
         <li className="blizkyPriatel">
-            <Link to={`/profil/${user.meno}`}>
+            <Link to={`/profil/${user.meno}`} style={{textDecoration: "none", color:"black", display: "inline-block", justifyContent:"center"}}>
                 <img className="blizkyPriatelImg" src={user.profilovka ? PF+user.profilovka : PF+"noAvatar.png"} alt="" />
                 <span className="blizkyPriatelMeno">{user.meno}</span>
             </Link>
