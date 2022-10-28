@@ -59,8 +59,6 @@ router.get("/friends/:userId", async (req, res) => {
     }
 });
 
-//get all users
-
 // get one
 router.get('/', async (req, res) => {
     const userId = req.query.userId;
@@ -101,14 +99,14 @@ router.put('/:id/follow', async (req, res) => {
 router.put('/:id/unfollow', async (req, res) => {
     if(req.body.userId !== req.params.id) {
         try {
-            const pouzivatel = await Pouzivatel.findById(req.params.id);
-            const sledovatel = await Pouzivatel.findById(req.body.userId);
-            if(pouzivatel.followers.includes(req.body.userId)) {
-                await pouzivatel.updateOne({$pull: {followers: req.body.userId} });
-                await sledovatel.updateOne({$pull: {followings: req.body.userId} });
-                res.status(200).json('Prestali ste sledovať používateľa!');
+            const user = await Pouzivatel.findById(req.params.id);
+            const currentUser = await Pouzivatel.findById(req.body.userId);
+            if(user.followers.includes(req.body.userId)) {
+                await user.updateOne({$pull: {followers: req.body.userId} });
+                await currentUser.updateOne({$pull: {followings: req.params.id} });
+                res.status(200).json('Prestali ste sledovať použivateľa!');
             } else {
-                res.status(403).json('Tohto používateĺa nesledujete!');
+                res.status(403).json('Tohoto používateľa už nesledujete!');
             }
         } catch(err) {
             res.status(500).json(err);
