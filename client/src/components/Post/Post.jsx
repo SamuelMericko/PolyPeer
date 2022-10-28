@@ -18,6 +18,10 @@ export default function Post({post}) {
 
     const [pouzivatel, setPouzivatel] = useState({});
 
+    const sleep = ms => new Promise(
+        resolve => setTimeout(resolve, ms)
+      );
+
     useEffect(() => {
         setIsLiked(post.likes.includes(user._id))
     },[user._id, post.likes]);
@@ -40,12 +44,13 @@ export default function Post({post}) {
         setIsLiked(!isLiked);
     }
 
-    const deletePost = () => {
+    const deletePost = async () => {
         try{
-            axios.delete('posts/'+ post._id, {data: {userId:user._id}})
+            await axios.delete('posts/'+ post._id, {data: {userId:user._id}});
+            window.location.reload();
         } catch(err) {
             console.log(err);
-        }
+        } 
     }
 
     console.log(pouzivatel);

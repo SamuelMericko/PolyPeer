@@ -37,14 +37,8 @@ router.delete('/:id', async(req, res) => {
         if(post.userId === req.body.userId){
             await post.deleteOne();
             res.status(200).json('Post bol odstránený');
-            console.log(post);
-            console.log(post.userId);
-            console.log(req.body.userId);
         } else {
             res.status(403).json('Môžete odstrániť len vlastný post');
-            console.log(post);
-            console.log(post.userId);
-            console.log(req.body.userId);
         }
     }   catch(err) {
         res.status(500).json(err);

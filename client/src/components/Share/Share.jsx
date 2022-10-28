@@ -2,6 +2,7 @@ import React, { useContext, useRef, useState } from 'react';
 import './Share.css';
 import {PermMedia, Label, Room, EmojiEmotions, WindowSharp} from '@mui/icons-material';
 import {AuthContext} from '../../context/AuthContext';
+import { Button } from '@mui/material';
 import axios from 'axios';
 
 const Share = () => {
@@ -38,30 +39,18 @@ const Share = () => {
             <div className="shareWrapper">
                 <div className="shareTop">
                     <img className="shareProfileImg" src={user.profilovka ? PF+user.profilovka : PF+'noAvatar.png'} alt="" />
-                    <textarea placeholder="Napíšte nám niečo!" className="shareInput" ref={popis}/>
+                    <input placeholder="Napíšte nám niečo!" className="shareInput" ref={popis}/>
                 </div>
                 <hr className="shareHr"/>
                 <form className="shareBottom" onSubmit={submitHandler}>
                     <div className="shareDetaily">
                         <label htmlFor="file" className="shareDetail">
-                            <PermMedia htmlColor="tomato" className="shareIcon"/>
-                            <span className="shareDetailText">Photo / Video</span>
+                            <PermMedia color="primary" className="shareIcon"/>
+                            <span className="shareDetailText">Nahrať obrázok</span>
                             <input type="file" id="file" accept='.png, .jpeg, .jpg' onChange={(e) =>setFile(e.target.files[0])}/>
                         </label>
-                        <div className="shareDetail">
-                            <Label htmlColor="blue" className="shareIcon"/>
-                            <span className="shareDetailText">Tag</span>
-                        </div>
-                        <div className="shareDetail">
-                            <Room htmlColor="green" className="shareIcon"/>
-                            <span className="shareDetailText">Lokácia</span>
-                        </div>
-                        <div className="shareDetail">
-                            <EmojiEmotions htmlColor="goldenrod" className="shareIcon"/>
-                            <span className="shareDetailText">Emoji</span>
-                        </div>
                     </div>
-                    <button className="shareButton" type="submit">Odoslať</button>
+                    <Button className="shareButton" color="secondary" variant="contained"size="small" type="submit">Odoslať</Button>
                 </form>
             </div>
         </div>
