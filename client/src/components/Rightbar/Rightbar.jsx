@@ -81,15 +81,15 @@ const handleClick = async () => {
       <div className="rightbarInfo">
         <div className="rightbarInfoItem">
           <span className="rightbarInfoKey">Krajina: </span>
-          <span className="rightbarInfoValue">{user.krajina}</span>
+          <span className="rightbarInfoValue">Slovensko</span>
         </div>
         <div className="rightbarInfoItem">
           <span className="rightbarInfoKey">Mesto: </span>
-          <span className="rightbarInfoValue">{user.mesto}</span>
+          <span className="rightbarInfoValue">Humenné</span>
         </div>
         <div className="rightbarInfoItem">
           <span className="rightbarInfoKey">Škola: </span>
-          <span className="rightbarInfoValue">{user.skola}</span>
+          <span className="rightbarInfoValue">Stredná odborná škola polytechnická, Humenné</span>
         </div>
       </div>
       <h4 className="rightbarNazov">Sledovatelia používateľa</h4>
