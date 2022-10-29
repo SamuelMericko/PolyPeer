@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import axios from 'axios';
-import { MoreVert } from '@mui/icons-material';
+import { ThumbUp } from '@mui/icons-material';
 import './Post.css';
 import { useState, useEffect } from 'react';
 import { format } from 'timeago.js';
@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
+
 
 export default function Post({post}) {
     const [like, setLike] = useState(post.likes.length);
@@ -46,14 +47,15 @@ export default function Post({post}) {
 
     const deletePost = async () => {
         try{
-            await axios.delete('posts/'+ post._id, {data: {userId:user._id}});
+            await axios.delete('/posts/'+ post._id, {data:{userId:user._id}});
             window.location.reload();
         } catch(err) {
             console.log(err);
         } 
     }
 
-    console.log(pouzivatel);
+    console.log(post._id, user._id);
+
 
     return (
       <div className="post">
@@ -78,9 +80,10 @@ export default function Post({post}) {
             </div>
             <div className="postDole">
                 <div className="postDoleVlavo">
-                <img className="likeIcon" src={`${PF}like.png`} onClick={likeHandler} alt="" />
-                <img className="likeIcon" src={`${PF}heart.png`} onClick={likeHandler} alt="" />
-                <span className="postLikeCounter">{like} ľudom sa to páči</span>
+                    <IconButton onClick={likeHandler} className="likeIcon" color="primary" sx={{m:1}}>
+                        <ThumbUp/>
+                    </IconButton>
+                    <span className="postLikeCounter">{like} ľudom sa to páči</span>
                 </div>
             </div>
         </div>
