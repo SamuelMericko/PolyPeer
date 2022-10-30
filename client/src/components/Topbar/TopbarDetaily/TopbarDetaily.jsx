@@ -4,15 +4,26 @@ import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import { Link } from 'react-router-dom';
 import { Avatar } from '@mui/material';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Settings, Chat } from '@mui/icons-material';
 import { AuthContext } from '../../../context/AuthContext';
 import { Button } from '@mui/material';
+import axios from 'axios';
 
 const TopbarDetaily = () => {
 
     const {user} = useContext(AuthContext); 
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const AVATAR = process.env.REACT_APP_AVATAR_FOLDER;
+    const [pouzivatel, setPouzivatel] = useState({});
+
+    useEffect(() => {
+        const fetchPouzivatel = async () => {
+            const res = await axios.get("/pouzivatelia/profilovka/"+user._id);
+            setPouzivatel(res.data);
+        };
+        fetchPouzivatel();
+    },[])
 
     const logout = async () => {
         try{
@@ -42,7 +53,7 @@ const TopbarDetaily = () => {
             </Fab>
             <Link to={`/profil/${user.meno}`}>
                 <Fab size="medium" href="/profil">
-                    <Avatar alt="Safak" src={user.profilovka ? PF+user.profilovka : PF+'noAvatar.png'} className="rightbarProfilePicture"/>
+                    <Avatar alt="Safak" src={pouzivatel.profilovka ? AVATAR+pouzivatel.profilovka : PF+'noAvatar.png'} className="rightbarProfilePicture"/>
                 </Fab> 
             </Link>
         </Box>

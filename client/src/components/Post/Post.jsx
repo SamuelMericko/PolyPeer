@@ -14,6 +14,7 @@ export default function Post({post}) {
     const [like, setLike] = useState(post.likes.length);
     const [isLiked, setIsLiked] = useState(false);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const AVATAR = process.env.REACT_APP_AVATAR_FOLDER;
     const POST = process.env.REACT_APP_POST_FOLDER;
     const {user} = useContext(AuthContext);
 
@@ -54,16 +55,13 @@ export default function Post({post}) {
         } 
     }
 
-    console.log(post._id, user._id);
-
-
     return (
       <div className="post">
         <div className="postWrapper">
             <div className="postHore">
                 <div className="postHoreVlavo">
                     <Link to={`profil/${pouzivatel.meno}`}>
-                        <img className="postProfileImage" src={pouzivatel.profilovka ? PF+pouzivatel.profilovka : PF+"noAvatar.png"} alt="" />
+                        <img className="postProfileImage" src={pouzivatel.profilovka ? AVATAR+pouzivatel.profilovka : PF+"noAvatar.png"} alt="" />
                     </Link>
                     <span className="postMeno">{pouzivatel.meno}</span>
                     <span className="postCas">{format(post.createdAt)}</span>

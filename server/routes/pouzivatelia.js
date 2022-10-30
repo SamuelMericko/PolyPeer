@@ -3,26 +3,14 @@ const Pouzivatel = require('../models/Pouzivatelia');
 const bcrypt = require('bcrypt');
 const Pouzivatelia = require('../models/Pouzivatelia');
 
-// Aktualizácia účtu
+// Aktualizácia profilu
 router.put('/:id', async (req, res) => {
-    if(req.body.userId === req.params.id || req.body.isAdmin) {
-        if(req.body.heslo){
-            try{
-                const salt = await bcrypt.genSalt()
-                req.body.heslo = await bcrypt.hash(req.body.heslo, salt);
-            } catch(err) {
-                return res.status(500).json(err);
-            }
-        }
         try {
-            const pouzivatel = await Pouzivatel.findByIdAndUpdate(req.params.id, {$set: req.body});
+            await Pouzivatel.findByIdAndUpdate(req.params.id, {$set: req.body});
             res.status(200).json('Účet bol aktualizovaný!')
         } catch(err) {
             return res.status(500).json(err);
         }
-    } else {
-        return res.status(403).json('Aktualizovať môžete iba svoj vlastný účet!');
-    }
 });
 
 // Odstránenie účtu
@@ -126,4 +114,15 @@ router.put('/:id/unfollow', async (req, res) => {
         res.status(403).json('Nemôžete zrušit sledovanie sami sebe!');
     }
 });
+
+//get profilovka
+router.get('/profilovka/:id', async (req, res) => {
+    try {
+        const user = await Pouzivatel.findById(req.params.id);
+        res.status(200).json(user);
+    } catch(err) {
+        return res.status(500).json(err);
+    }
+});
+
 module.exports = router;

@@ -10,6 +10,7 @@ import { Add, Remove } from '@mui/icons-material';
 
 export default function Rightbar({ user }) {
 const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+const AVATAR = process.env.REACT_APP_AVATAR_FOLDER;
 const [friends, setFriends] = useState([]);
 const {user:currentUser, dispatch} = useContext(AuthContext);
 const [followed, setFollowed] = useState(false);
@@ -96,7 +97,7 @@ const handleClick = async () => {
         {friends.map(friend=>(
         <Link to={"/profil/" + friend.meno} style={{textDecoration: "none", color:"black"}}>
           <div className="rightbarFollowing">
-            <img className="rightbarFollowingImg" src={friend.profilovka ? PF+friend.profilovka : PF+"noAvatar.png"} alt="" />
+            <img className="rightbarFollowingImg" src={friend.profilovka ? AVATAR+friend.profilovka : PF+"noAvatar.png"} alt="" />
             <span className="rightbarFollowingName">{friend.meno}</span>
           </div>
         </Link>

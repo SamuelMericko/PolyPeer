@@ -5,12 +5,23 @@ import {AuthContext} from '../../context/AuthContext';
 import { Button } from '@mui/material';
 import { Cancel } from '@mui/icons-material';
 import axios from 'axios';
+import { useEffect } from 'react';
 
 const Share = () => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const AVATAR = process.env.REACT_APP_AVATAR_FOLDER;
+    const [pouzivatel, setPouzivatel] = useState({});
     const {user} = useContext(AuthContext);
     const popis = useRef()
     const [file, setFile] = useState(null)
+
+    useEffect(() => {
+      const fetchPouzivatel = async () => {
+          const res = await axios.get("/pouzivatelia/profilovka/"+user._id);
+          setPouzivatel(res.data);
+      };
+      fetchPouzivatel();
+  },[])
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -39,7 +50,7 @@ const Share = () => {
         <div className="share">
             <div className="shareWrapper">
                 <div className="shareTop">
-                    <img className="shareProfileImg" src={user.profilovka ? PF+user.profilovka : PF+'noAvatar.png'} alt="" />
+                    <img className="shareProfileImg" src={pouzivatel.profilovka ? AVATAR+pouzivatel.profilovka : PF+"noAvatar.png"} alt="" />
                     <input placeholder="Napíšte nám niečo!" className="shareInput" ref={popis}/>
                 </div>
                 <hr className="shareHr"/>
