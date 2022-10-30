@@ -60,7 +60,7 @@ export default function Profil() {
                       { pouzivatel.meno === user.meno && <>
                       <div className="avatarUpload">
                         <input accept='.png, .jpeg, .jpg' id="icon-button-file"
-                          type="file" on onChange={(e) => {
+                          type="file" style={{ display: 'none' }} on onChange={(e) => {
                             setAvatar(e.target.files[0])
                             putAvatar()
                             }}/>
