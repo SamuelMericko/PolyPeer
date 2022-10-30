@@ -26,7 +26,7 @@ const Share = () => {
           newPost.img = fileName;
           console.log(newPost);
           try {
-            await axios.post("/upload", data);
+            await axios.post("/upload/posts", data);
           } catch (err) {}
         }
         try {
