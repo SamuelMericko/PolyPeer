@@ -30,11 +30,13 @@ router.post('/login', async (req, res) => {
     try {
         // Email 
         const pouzivatel = await Pouzivatel.findOne({email:req.body.email});
-        !pouzivatel && res.status(404).send('Používateľ sa nenašiel')
+        if(!pouzivatel)
+            throw Error('Zlá emailová adresa');
 
         // Heslo
         const spravneHeslo = await bcrypt.compare(req.body.heslo, pouzivatel.heslo);
-        !spravneHeslo && res.status(400).json('Zlé heslo');
+        if(!spravneHeslo)
+            throw Error('Zlé heslo');
 
         res.status(200).json(pouzivatel);
     } catch(err) {
