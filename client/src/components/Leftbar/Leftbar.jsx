@@ -12,7 +12,8 @@ const Leftbar = () => {
 
     useEffect(() => {
         const fetchUsers = async () => {
-            const res = await axios.get('pouzivatelia/allusers/');
+            const res = await axios.get('http://localhost:3000/pouzivatelia/allusers');
+            console.log(res)
             setUsers(res.data)
         }
         fetchUsers();
@@ -29,7 +30,7 @@ const Leftbar = () => {
 
                 <div className="blizkiPriateliaWrapper">
                     <Group className="blizkiPriateliaIcon"/>
-                    <h2 className="blizkiPriateliaNazov">Používatelia PolyPeer</h2>
+                    <h2 className="blizkiPriateliaNazov">Všetci používatelia</h2>
                 </div>
                 
                 <ul className="blizkiPriatelia">
