@@ -52,12 +52,10 @@ export default function Profil() {
         <div className="profilVpravo">
             <div className="profilVpravoHore">
                 <div className="profilCover">
-                  <div className="div">
                     <img className="profilCoverImg" src={pouzivatel.coverPicture ? PF+pouzivatel.coverPicture : PF+"noCover.png"} alt="" />
-                    </div>
-                    <div className="profilAvatar">
-                      <img className="profilUserImg" src={pouzivatel.profilovka ? AVATAR+pouzivatel.profilovka : PF+"noAvatar.png"} alt="" />
-                      { pouzivatel.meno === user.meno && <>
+                    <img className="profilUserImg" src={pouzivatel.profilovka ? AVATAR+pouzivatel.profilovka : PF+"noAvatar.png"} alt="" />
+                    { pouzivatel.meno === user.meno && <>
+                    <div className="profilAvatar"> 
                       <div className="avatarUpload">
                         <input accept='.png, .jpeg, .jpg' id="icon-button-file"
                           type="file" style={{ display: 'none' }} on onChange={(e) => {
@@ -65,12 +63,13 @@ export default function Profil() {
                             putAvatar()
                             }}/>
                         <label htmlFor="icon-button-file">
-                          <IconButton color="primary" component="span" sx={{alignContent: "center"}}>
+                          <IconButton component="span" sx={{alignContent: "center", color: "white", bottom: 2, right: 2}}>
                             <Edit />
                           </IconButton>
                         </label>
-                      </div></>}
+                      </div>
                     </div>
+                  </>}
                 </div>
                 <div className="profilInfo">
                     <h4 className="profilInfoMeno">{pouzivatel.meno}</h4>
