@@ -40,8 +40,20 @@ router.post('/login', async (req, res) => {
 
         res.status(200).json(pouzivatel);
     } catch(err) {
-        res.status(500).json(err)
+        res.status(500).json('Zadali ste zle prihlasovacie údaje')
     }
 });
+
+// Prihlásenie Error
+router.get('/login/error', async (req, res) => {
+    try {
+        // Email 
+        const pouzivatel = await Pouzivatel.findOne({email:req.body.email});
+        const spravneHeslo = await bcrypt.compare(req.body.heslo, pouzivatel.heslo);
+    } catch(err) {
+        res.json('Zadali ste nesprávne prihlasovacie údaje!');
+    }
+});
+
 
 module.exports = router;

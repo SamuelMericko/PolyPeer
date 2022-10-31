@@ -92,3 +92,7 @@
 .loginRegisterButton:disabled {
     cursor: not-allowed;
 }
+
+.loginErrorText {
+    color:rgb(206, 44, 44)
+}
