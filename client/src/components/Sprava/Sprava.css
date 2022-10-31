@@ -1,0 +1,39 @@
+.sprava {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.spravaHore {
+    display: flex;
+}
+
+.spravaImg {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.spravaText {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #00bbff;
+    color: white;
+    max-width: 300px;
+    font-size: 18px;
+}
+
+.spravaDole {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.sprava.vlastna {
+    align-items: flex-end;
+}
+
+.sprava.vlastna .spravaText{
+    background-color: rgb(37, 190, 57);
+}

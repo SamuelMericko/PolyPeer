@@ -45,9 +45,11 @@ const TopbarDetaily = () => {
         height="55px"
         marginRight={5}
         >
-            <Fab color="primary" aria-label="add" size="medium">
-                <Chat />
-            </Fab>
+            <Link to={`/chat`}>
+                <Fab color="primary" aria-label="add" size="medium">
+                    <Chat />
+                </Fab>
+            </Link>
             <Fab color="grey" aria-label="edit" size="medium">
                 <Settings />
             </Fab>

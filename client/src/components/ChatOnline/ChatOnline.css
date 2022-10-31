@@ -1,0 +1,22 @@
+.chatOnline {
+    animation: 3s anim-lineUpRightbar ease-out;
+}
+
+.chatOnlinePriatel {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px;
+
+}
+
+.chatOnlinePriatel:hover {
+    background-color: rgb(247, 247, 247);
+    border-radius: 50px;
+
+}
+
+.chatOnlineMeno {
+     margin-left: 10px;
+}

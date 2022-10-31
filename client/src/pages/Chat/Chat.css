@@ -1,0 +1,63 @@
+.chat {
+    height: 100vh;
+    display: flex;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.chatMenu {
+    flex: 3;
+}
+
+.chatMenuInput {
+    animation: 3s anim-lineUpDomov ease-out;
+    width: 90%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.chatBox {
+    animation: 3s anim-lineUp ease-out;
+    flex: 6;
+}
+
+.chatBoxWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.chatBoxHore {
+    overflow: scroll;
+    height: 80%;
+    padding-right: 10px;
+}
+
+.chatBoxDole {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+}
+
+.chatSpravaInput {
+    width: 80%;
+    height: 20px;
+    padding: 20px;
+    border: none;
+    background-color: rgb(235, 235, 235);
+    border-radius: 50px;
+    resize: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+    border: none;
+    outline: none;
+}
+
+.chatOnline {
+    flex: 3;
+}
+
+.chatMenuWrapper, .chatBoxWrapper, .chatOnlineWrapper {
+    padding: 10px;
+    height: 100%;
+}

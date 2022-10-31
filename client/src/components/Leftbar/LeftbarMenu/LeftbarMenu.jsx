@@ -31,13 +31,15 @@ export default function LeftbarMenu() {
           </ListItemIcon>
           <ListItemText primary="Domov" />
         </ListItemButton>
-        <ListItemButton sx={{ pl: 4 }}>
-          <ListItemIcon>
-            <Chat color="primary"/>
-          </ListItemIcon>
-          <ListItemText primary="Správy" />
-        </ListItemButton>
-        <Link to={`/profil/${user.meno}`} className="leftbarLinkToProfile">
+        <Link to={`/chat`} className="leftbarLink">
+          <ListItemButton sx={{ pl: 4 }}>
+            <ListItemIcon>
+              <Chat color="primary"/>
+            </ListItemIcon>
+            <ListItemText primary="Správy" />
+          </ListItemButton>
+        </Link>
+        <Link to={`/profil/${user.meno}`} className="leftbarLink">
           <ListItemButton sx={{ pl: 4 }}> 
               <ListItemIcon>
                 <Person color="primary"/>

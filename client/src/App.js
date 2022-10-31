@@ -10,6 +10,7 @@ import Registracia from "./pages/Registracia/Registracia";
 import Nenajdene from "./pages/Nenajdene/Nenajdene";
 import Domov from "./pages/Domov/Domov";
 import Profil from "./pages/Profil/Profil";
+import Chat from "./pages/Chat/Chat";
 
 //Vytvorenie témy stránky
 import { createTheme, ThemeProvider } from '@mui/material';
@@ -53,6 +54,7 @@ const tema = createTheme({
               <Route path="/login" element={user ? <Domov/> : <Prihlasenie />}/>
               <Route path="/registracia" element={user ? <Domov/> : <Registracia />}/>
               <Route path="/profil/:meno" element={<Profil />}/>
+              <Route path="/chat" element={user ? <Chat/> : <Registracia />}/>
               <Route path="*" element={<Nenajdene />} />
             </Routes>
           )}
