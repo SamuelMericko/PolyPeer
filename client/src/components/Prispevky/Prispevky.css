@@ -1,8 +1,12 @@
 .prispevky {
     flex: 5;
-    height: 93vh;
+    height: 96vh;
+    position: relative;
     overflow: scroll;
     animation: 3s anim-lineUpPrispevky ease-out;
+}
+.odsadenie {
+  margin-bottom: 400px;
 }
 
 @keyframes anim-lineUpPrispevky {

@@ -24,14 +24,18 @@ const Prispevky = ({username}) => {
     },[username, user._id])
 
     return (
-        <div className="prispevky">
-            <div className="prispevkyWrapper">
-                {(!username || username === user.meno) && <Share />}
-                {prispevky.map((p) => (
-                    <Post key={p._id} post={p}/>
-                ))}
+        <>
+            <div className="prispevky">
+                <div className="prispevkyWrapper">
+                    {(!username || username === user.meno) && <Share />}
+                    {prispevky.map((p) => (
+                        <Post key={p._id} post={p}/>
+                    ))}
+                </div>
+                <div className="odsadenie" ></div>
             </div>
-        </div>
+            
+        </>
     );
 }
  
