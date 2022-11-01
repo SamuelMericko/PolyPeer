@@ -1,5 +1,5 @@
 .chat {
-    height: 100vh;
+    height: 92vh;
     display: flex;
     font-family: 'Work Sans', sans-serif;
 }
@@ -22,6 +22,7 @@
 }
 
 .chatBoxWrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -60,4 +61,13 @@
 .chatMenuWrapper, .chatBoxWrapper, .chatOnlineWrapper {
     padding: 10px;
     height: 100%;
+}
+
+.noConversationText {
+    position: absolute;
+    top: 10%;
+    font-size: 50px;
+    color: rgb(224, 224, 224);
+    text-align: center;
+    cursor: default;
 }
