@@ -1,11 +1,30 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import './Konverzacia.css';
 
-const Konverzacia = () => {
+const Konverzacia = ({conversation, currentUser}) => {
+    const AVATAR = process.env.REACT_APP_AVATAR_FOLDER;
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const friendId = conversation.members.find(m=>m !== currentUser._id);
+
+        const getUser = async () => {
+            try {
+              const res = await axios("/pouzivatelia?userId=" + friendId);
+              setUser(res.data);
+            } catch (err) {
+              console.log(err);
+            }
+          };
+          getUser();
+        }, [currentUser, conversation]);
+
     return (
         <div className="konverzacia">
-            <img className="konverzaciaImg" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwritestylesonline.com%2Fwp-content%2Fuploads%2F2016%2F08%2FFollow-These-Steps-for-a-Flawless-Professional-Profile-Picture.jpg&f=1&nofb=1&ipt=05b95ab2eb10727742e3923f1c0329b34351893e42049949a39823e6d2840032&ipo=images" alt="" />
-            <p className="konverzaciaMeno">John Doe</p>
+            <img className="konverzaciaImg" src={user?.profilovka ? AVATAR+user.profilovka : PF+"noAvatar.png"} alt="" />
+            <p className="konverzaciaMeno">{user?.meno}</p>
         </div>
     );
 }

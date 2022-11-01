@@ -13,7 +13,6 @@ const Leftbar = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             const res = await axios.get('http://localhost:3000/pouzivatelia/allusers');
-            console.log(res)
             setUsers(res.data)
         }
         fetchUsers();

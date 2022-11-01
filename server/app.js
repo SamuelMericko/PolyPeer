@@ -11,6 +11,8 @@ const authRoute = require('./routes/auth');
 const postRoute = require('./routes/posts');
 const errorRoute = require('./routes/errors');
 const storageRoute = require('./routes/storage');
+const conversationRoute = require('./routes/conversations');
+const messageRoute = require('./routes/messages');
 const path = require('path');
 
 // inicializácia aplikácie
@@ -27,6 +29,8 @@ app.use('/api/pouzivatelia', userRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/posts', postRoute);
 app.use('/api/upload', storageRoute);
+app.use('/api/conversations', conversationRoute);
+app.use('/api/messages', messageRoute);
 
 
 app.get('/', (req, res, next) => {
