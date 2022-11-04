@@ -29,9 +29,9 @@ const Chat = () => {
         sender: data.senderId,
         text: data.text,
         createdAt: Date.now(),
+        });
       });
-    });
-  }, []);
+    }, []);
 
   useEffect(() => {
     arrivalMessage &&
@@ -103,9 +103,7 @@ const Chat = () => {
     useEffect(() => {
       scrollRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
-
-    console.log(onlineUsers)
-
+    
     return (
         <>
             <Topbar />

@@ -20,16 +20,12 @@ const io = require("socket.io")(8900, {
   };
   
   io.on("connection", (socket) => {
-    //when ceonnect
     console.log("Používateľ sa prihlásil");
-  
-    //take userId and socketId from user
     socket.on("addUser", (userId) => {
       addUser(userId, socket.id);
       io.emit("getUsers", users);
     });
-  
-    //send and get message
+
     socket.on("sendMessage", ({ senderId, receiverId, text }) => {
       const user = getUser(receiverId);
       io.to(user.socketId).emit("getMessage", {
@@ -38,7 +34,6 @@ const io = require("socket.io")(8900, {
       });
     });
   
-    //when disconnect
     socket.on("disconnect", () => {
       console.log("Používateľ sa odhlásil");
       removeUser(socket.id);
