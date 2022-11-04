@@ -1,10 +1,11 @@
 import { Avatar, Stack } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './ChatOnline.css';
+import axios from "axios";
 
-const ChatOnline = () => {
+const ChatOnline = ({ onlineUsers, currentId, setCurrentChat }) => {
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {
           backgroundColor: '#44b700',
@@ -34,9 +35,36 @@ const ChatOnline = () => {
         },
       }));
 
+      const [friends, setFriends] = useState([]);
+      const [onlineFriends, setOnlineFriends] = useState([]);
+      const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+      const AVATAR = process.env.REACT_APP_AVATAR_FOLDER;
+
+      useEffect(() => {
+        const getFriends = async () => {
+          const res = await axios.get("/pouzivatelia/friends/" + currentId);
+          setFriends(res.data);
+        };
+        getFriends();
+      }, [currentId]);
+    
+      useEffect(() => {
+        setOnlineFriends(friends.filter((f) => onlineUsers.includes(f._id)));
+      }, [friends, onlineUsers]);
+
+      const handleClick = async (user) => {
+        try {
+          const res = await axios.get(`/conversations/find/${currentId}/${user._id}`);
+          setCurrentChat(res.data);
+        } catch(err) {
+          console.log(err);
+        }
+      }
+
     return (
         <div className="chatOnline">
-            <div className="chatOnlinePriatel">
+          {onlineFriends.map((o) => (
+            <div className="chatOnlinePriatel" onClick={()=>{handleClick(o)}}>
                 <div className="chatOnlineImgContainer">
                     <Stack direction="row" spacing={2} className="chatOnlineImg">
                         <StyledBadge
@@ -44,12 +72,13 @@ const ChatOnline = () => {
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                             variant="dot"
                         >
-                            <Avatar alt="Remy Sharp" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwritestylesonline.com%2Fwp-content%2Fuploads%2F2016%2F08%2FFollow-These-Steps-for-a-Flawless-Professional-Profile-Picture.jpg&f=1&nofb=1&ipt=05b95ab2eb10727742e3923f1c0329b34351893e42049949a39823e6d2840032&ipo=images" />
+                            <Avatar alt="Remy Sharp" src={o?.profilovka ? AVATAR+o.profilovka : PF+"noAvatar.png"} />
                         </StyledBadge>
                     </Stack>
                     </div>
-                    <p className="chatOnlineMeno">John Doe</p>
+                    <p className="chatOnlineMeno">{o?.meno}</p>
                 </div>
+              ))}
             </div>
     );
 }
