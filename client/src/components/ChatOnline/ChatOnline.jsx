@@ -4,7 +4,6 @@ import Badge from '@mui/material/Badge';
 import React, { useEffect, useState } from "react";
 import './ChatOnline.css';
 import axios from "axios";
-import { ConnectingAirportsOutlined } from "@mui/icons-material";
 
 const ChatOnline = ({ onlineUsers, currentId, setCurrentChat }) => {
     const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -56,7 +55,6 @@ const ChatOnline = ({ onlineUsers, currentId, setCurrentChat }) => {
       const handleClick = async (user) => {
         try {
           const res = await axios.get(`/conversations/find/${currentId}/${user._id}`);
-          console.log(res);
           if(res.data == null) {
             const response = await axios.post("/conversations/", {text: "start", senderId: currentId, recieverId: user._id });
             setCurrentChat(response.data);

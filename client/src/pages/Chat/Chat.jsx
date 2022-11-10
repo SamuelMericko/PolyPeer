@@ -71,7 +71,8 @@ const Chat = () => {
         }
       };
       getMessages();
-    }, [currentChat]);
+    }, [currentChat, messages]);
+
   
     const handleSubmit = async (e) => {
       e.preventDefault();

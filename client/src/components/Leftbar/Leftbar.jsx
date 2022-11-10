@@ -1,7 +1,6 @@
 import React from "react";
 import './Leftbar.css';
 import BlizkyPriatel from "../BlizkyPriatel/BlizkyPriatel";
-import { Users } from "../../dummyData";
 import LeftbarMenu from "./LeftbarMenu/LeftbarMenu";
 import { Group } from '@mui/icons-material';
 import { useEffect, useState } from "react";
@@ -16,7 +15,7 @@ const Leftbar = () => {
             setUsers(res.data)
         }
         fetchUsers();
-    },[1]);
+    },[]);
 
     return (
         <div className="leftbar">

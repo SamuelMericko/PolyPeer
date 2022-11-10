@@ -1,6 +1,5 @@
 .rightbar {
-    flex: 2.5;
-    animation: 3s anim-lineUpRightbar ease-out;
+    flex: 2.5;   
 }
 
 .rightbarWrapper {

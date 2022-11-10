@@ -1,7 +1,3 @@
-.chatOnline {
-    animation: 3s anim-lineUpRightbar ease-out;
-}
-
 .chatOnlinePriatel {
     display: flex;
     align-items: center;

@@ -1,13 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import './Rightbar.css';
-import { Users } from '../../dummyData';
-import Online from '../Online/Online';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import { Button } from '@mui/material';
 import { Add, Remove } from '@mui/icons-material';
-import ChatOnline from '../ChatOnline/ChatOnline';
 import ChatOnlineRightbar from './ChatOnlineRightbar/ChatOnlineRightbar';
 import {io} from 'socket.io-client';
 
@@ -71,6 +68,7 @@ export default function Rightbar({ user }) {
       console.log(err)
     }
   }
+  
 
   const DomovRightBar = () => {
     return(
