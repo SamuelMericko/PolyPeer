@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import { Button } from '@mui/material';
 import { Add, Remove } from '@mui/icons-material';
+import PublicIcon from '@mui/icons-material/Public';
 import ChatOnlineRightbar from './ChatOnlineRightbar/ChatOnlineRightbar';
 import {io} from 'socket.io-client';
 
@@ -80,7 +81,10 @@ export default function Rightbar({ user }) {
                             <img src="/images/rightbarIlustracia.jpg" alt="kavaIlustracia" className='rightbarIlustracia'/>
                         </div>  
                         <hr className="rightbarBreak"/>
-                        <h4 className="rightbarNazov">Online Priatelia</h4>
+                        <div className="rightbarNazovWrapper">
+                          <PublicIcon />
+                          <h4 className="rightbarNazov">Online Priatelia</h4>
+                        </div>
                         <ul className="rightbarFriendList">
                         <ChatOnlineRightbar
                           onlineUsers={onlineUsers}

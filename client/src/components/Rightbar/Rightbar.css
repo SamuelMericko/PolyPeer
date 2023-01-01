@@ -7,6 +7,10 @@
     padding-top: 15px;
 }
 
+.rightbarNazovWrapper{
+    display: flex;
+}
+
 .rightbarDetailyWrapper {
     justify-content: end;
 }
@@ -28,8 +32,9 @@
 
 .rightbarNazov {
     margin-bottom: 20px;
+    margin-left: 7px;
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 700;
 }
 .rightbarInfo {
     margin-bottom: 30px;
