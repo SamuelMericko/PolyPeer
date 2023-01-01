@@ -19,8 +19,8 @@
 ### Použité technológie:
 
  - **HTML** – hlavná štruktúra aplikácie
- - **CSS** – vytvorenie estetickej stránky aplikácie
- - **JavaScript** – hlavný programovací jazyk stránky
+ - **CSS** – vytvorenie estetickej stránky aplikácie.
+ - **JavaScript** – hlavný programovací jazyk stránky.
  - **MongoDB** – nerelačná databáza, kam sa budú ukladať používateľské účty, heslá (šifrované), ich príslušnosť k danej skupine
    (žiak/zamestnanec), dodatočné informácie o sebe (meno, priezvisko,
    trieda, škola) a informácie o jednotlivých publikáciách (názov, text,
@@ -34,10 +34,29 @@
  - **Express.js** – nadstavba Node.js, ktorá uľahčuje prácu so smerovaním používateľských požiadaviek pre stránky, chat a podobne.
  - **React** – technológia, ktorá v spojení s HTML, CSS a JavaScriptom bude tvoriť hlavnú estetickú časť aplikácie – dizajn hlavičky,
    navigácie, prihlasovacieho formulára a podobne.
- - **Figma** - Desktopová/Webová aplikácia, ktorú použijem na vytvorenie konceptu dizajnu stránok
+ - **Figma** - Desktopová/Webová aplikácia, ktorú použijem na vytvorenie konceptu dizajnu stránok.
  - **Adobe Illustrator** – Desktopová aplikácia, ktorú použijem na návrh loga a ilustrácií stránky.
  - **GitHub** - systém správy verzií, kam budem ukladať a zálohovať svoj kód a dizajn stránok.
- - **Visual Studio Code** – môj hlavný desktopový editor kódu, pomocou ktorého naprogramujem aplikáciu
+ - **Visual Studio Code** – môj hlavný desktopový editor kódu, pomocou ktorého naprogramujem aplikáciu.
+ - **Socket.io** - knižnica využívana na vytvorenie chatovej aplikácie v reálnom čase.
+ - **Material UI** - implementácia rýchleho dizajnu kompnentov aplikácie.
  
 ## Postup inštalácie projektu:
 1. Stiahnuť súbory z GitHubu.
+2. Stiahnúť a nainštalovať si VSCode - https://code.visualstudio.com/
+3. Stiahnuť a nainštalovať najnovšiu verziu node.js (Current) - https://nodejs.org/en/
+4. Po úspešnom nainštalovaní programov rozbalíme stianutý .zip priečinok s kódom
+5. Pravým kliknutím myši na novovytvorený súbor zvolíme možnosť "Open with VSCode / Otvoriť v programe VSCode"
+6. V editori si otvoríme 3 nové terminály, ktoré sa nachádzaju v hornom paneli apliácie.
+7. Do prvého terminálu napíšeme nasledujúce príkazy:
+   _cd server_
+   _npm install_
+   _npm start_
+8. Do druhého terminálu napíšeme:
+   _cd socket_
+   _npm install_
+   _npm start_
+9. Do posledného terminálu napíšeme:
+   _cd client_
+   _npm install_
+   _npm start_
