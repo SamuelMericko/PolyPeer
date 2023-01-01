@@ -1,7 +1,8 @@
 ## Zdroje a námety
 # Tutoriály a námety:
--https://www.youtube.com/watch?v=zM93yZ_8SvE&list=PLj-4DlPRT48nfYgDK00oTjlDF4O0ZZyG8&index=1
--https://www.youtube.com/watch?v=ldGl6L4Vktk&t=790s
+1.https://www.youtube.com/watch?v=zM93yZ_8SvE&list=PLj-4DlPRT48nfYgDK00oTjlDF4O0ZZyG8&index=1
+
+2.https://www.youtube.com/watch?v=ldGl6L4Vktk&t=790s
 -https://www.youtube.com/watch?v=pFHyZvVxce0&list=PLj-4DlPRT48nfYgDK00oTjlDF4O0ZZyG8&index=2
 -https://www.youtube.com/watch?v=HggSXt1Hzfk&list=PLj-4DlPRT48nfYgDK00oTjlDF4O0ZZyG8&index=5
 -https://www.youtube.com/watch?v=Xoz31I1FuiY
