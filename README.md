@@ -1,12 +1,19 @@
 ## Zdroje a námety
 # Tutoriály a námety:
 1.https://www.youtube.com/watch?v=zM93yZ_8SvE&list=PLj-4DlPRT48nfYgDK00oTjlDF4O0ZZyG8&index=1
+
 2.https://www.youtube.com/watch?v=ldGl6L4Vktk&t=790s
+
 3.https://www.youtube.com/watch?v=pFHyZvVxce0&list=PLj-4DlPRT48nfYgDK00oTjlDF4O0ZZyG8&index=2
+
 4.https://www.youtube.com/watch?v=HggSXt1Hzfk&list=PLj-4DlPRT48nfYgDK00oTjlDF4O0ZZyG8&index=5
+
 5.https://www.youtube.com/watch?v=Xoz31I1FuiY
+
 6.https://www.youtube.com/watch?v=o1nCmiW6auE
+
 7.https://www.youtube.com/watch?v=zb3Qk8SG5Ms&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU
+
 
 # Obrázky:
 Nevlastním práva k jednotlivým ilustráciam ani fotkám.
