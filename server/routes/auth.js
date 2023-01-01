@@ -46,7 +46,6 @@ router.post('/login', async (req, res) => {
 // Prihlásenie Error
 router.get('/login/error', async (req, res) => {
     try {
-        // Email 
         const pouzivatel = await Pouzivatel.findOne({email:req.body.email});
         const spravneHeslo = await bcrypt.compare(req.body.heslo, pouzivatel.heslo);
     } catch(err) {

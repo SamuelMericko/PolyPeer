@@ -3,16 +3,6 @@ const Pouzivatel = require('../models/Pouzivatelia');
 const bcrypt = require('bcrypt');
 const Pouzivatelia = require('../models/Pouzivatelia');
 
-// Aktualizácia profilu
-router.put('/:id', async (req, res) => {
-        try {
-            await Pouzivatel.findByIdAndUpdate(req.params.id, {$set: req.body});
-            res.status(200).json('Účet bol aktualizovaný!')
-        } catch(err) {
-            return res.status(500).json(err);
-        }
-});
-
 // Odstránenie účtu
 router.delete('/:id', async (req, res) => {
     if(req.body.userId === req.params.id || req.body.isAdmin) {
