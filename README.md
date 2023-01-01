@@ -49,14 +49,25 @@
 5. Pravým kliknutím myši na novovytvorený súbor zvolíme možnosť "Open with VSCode / Otvoriť v programe VSCode"
 6. V editori si otvoríme 3 nové terminály, ktoré sa nachádzaju v hornom paneli apliácie.
 7. Do prvého terminálu napíšeme nasledujúce príkazy:
+
    _cd server_
+
    _npm install_
+
    _npm start_
+
 8. Do druhého terminálu napíšeme:
+
    _cd socket_
+
    _npm install_
+
    _npm start_
+
 9. Do posledného terminálu napíšeme:
+
    _cd client_
+
    _npm install_
+
    _npm start_
