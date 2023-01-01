@@ -38,3 +38,6 @@
  - **Adobe Illustrator** – Desktopová aplikácia, ktorú použijem na návrh loga a ilustrácií stránky.
  - **GitHub** - systém správy verzií, kam budem ukladať a zálohovať svoj kód a dizajn stránok.
  - **Visual Studio Code** – môj hlavný desktopový editor kódu, pomocou ktorého naprogramujem aplikáciu
+ 
+## Postup inštalácie projektu:
+1. Stiahnuť súbory z GitHubu.
