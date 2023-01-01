@@ -19,6 +19,7 @@
 Nevlastním práva k jednotlivým ilustráciam ani fotkám.
 Všetky ilustrácie a fotografie sú určené len na návrh dizajnu aplikácie.
 Finálny produkt nesmie obsahovať ilustrácie a fotografie tertích strán.
+Aplikácia nesmie byť využitá na komerčné činnosti.
 
 1.[https://www.manypixels.co/](https://www.manypixels.co/gallery)
 
