@@ -47,13 +47,14 @@ export default function Rightbar({ user }) {
   useEffect(() => {
     const getFriends = async () => {
       try {
-        const friendList = await axios.get("/pouzivatelia/friends/" + currentUser?._id)
+        const friendList = await axios.get("/pouzivatelia/friends/" + user._id)
         setFriends(friendList.data);
       } catch(err) {
+        console.log(err);
       }
     };
     getFriends();
-  }, [currentUser?._id]);
+  }, [user]);
 
   const handleClick = async () => {
     try {
@@ -65,6 +66,7 @@ export default function Rightbar({ user }) {
         dispatch({type:"FOLLOW", payload:user._id});
       }
       setFollowed(!followed);
+      window.location.reload(false);
     } catch(err) {
       console.log(err)
     }

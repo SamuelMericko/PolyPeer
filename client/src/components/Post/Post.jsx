@@ -67,9 +67,11 @@ export default function Post({post}) {
                     <span className="postCas">{format(post.createdAt)}</span>
                 </div>
                 <div className="postTopRight">
-                <IconButton aria-label="delete">
-                    <DeleteIcon onClick={deletePost}/>
-                </IconButton>
+                { pouzivatel.meno === user.meno && <>
+                    <IconButton aria-label="delete">
+                        <DeleteIcon onClick={deletePost}/>
+                    </IconButton>
+                </>}
                 </div>
             </div>
             <div className="postStred">

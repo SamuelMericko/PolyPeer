@@ -28,7 +28,7 @@ const Leftbar = () => {
 
                 <div className="blizkiPriateliaWrapper">
                     <Group className="blizkiPriateliaIcon"/>
-                    <h2 className="blizkiPriateliaNazov">Všetci používatelia</h2>
+                    <h2 className="blizkiPriateliaNazov">Všetci Používatelia</h2>
                 </div>
                 
                 <ul className="blizkiPriatelia">
