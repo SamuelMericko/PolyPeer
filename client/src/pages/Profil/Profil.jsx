@@ -39,7 +39,7 @@ export default function Profil() {
       try {
         await axios.put("/upload/avatars", data);
         await axios.put("/pouzivatelia/"+user._id, {profilovka: user.profilovka})
-        await window.location.reload();
+        window.location.reload();
       } catch (err) {}
     }
   };

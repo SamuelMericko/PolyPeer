@@ -28,7 +28,8 @@ const io = require("socket.io")(8900, {
 
     socket.on("sendMessage", ({ senderId, receiverId, text }) => {
       const user = getUser(receiverId);
-      io.to(user.socketId).emit("getMessage", {
+
+      io.to(user?.socketId).emit("getMessage", {
         senderId,
         text,
       });
@@ -38,5 +39,6 @@ const io = require("socket.io")(8900, {
       console.log("Používateľ sa odhlásil");
       removeUser(socket.id);
       io.emit("getUsers", users);
+      socket.removeAllListeners();
     });
   });

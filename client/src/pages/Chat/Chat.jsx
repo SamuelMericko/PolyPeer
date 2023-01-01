@@ -23,7 +23,11 @@ const Chat = () => {
     const scrollRef = useRef();
 
     useEffect(() => {
-    socket.current = io("ws://localhost:8900");
+    socket.current = io("ws://localhost:8900", {
+      transports: ['websocket'],
+      upgrade: false
+    });
+    
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         sender: data.senderId,
@@ -46,7 +50,7 @@ const Chat = () => {
         user.followings.filter((f) => users.some((u) => u.userId === f))
       );
     });
-  }, [user]);
+  }, [user, currentChat]);
 
   
     useEffect(() => {
@@ -71,7 +75,7 @@ const Chat = () => {
         }
       };
       getMessages();
-    }, [currentChat, messages]);
+    }, [currentChat]);
 
   
     const handleSubmit = async (e) => {

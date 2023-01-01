@@ -15,7 +15,7 @@ const Topbar = () => {
                 <div className="topbarStred">
                     <div className="topbarSearch">
                         <Search className="searchIcon"/>
-                        <input placeholder="Hľadajte prijateľov, príspevky alebo obrázky" className='searchInput' />
+                        <input placeholder="Hľadajte priateľov, príspevky alebo obrázky" className='searchInput' />
                     </div>
                 </div>
 

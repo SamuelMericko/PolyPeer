@@ -36,7 +36,6 @@ export default function Rightbar({ user }) {
     }, []);
 
   useEffect(() => {
-    socket.current.emit("addUser", currentUser._id);
     socket.current.on("getUsers", (users) => {
       setOnlineUsers(
         currentUser.followings.filter((f) => users.some((u) => u.userId === f))
@@ -66,7 +65,6 @@ export default function Rightbar({ user }) {
         dispatch({type:"FOLLOW", payload:user._id});
       }
       setFollowed(!followed);
-      window.location.reload(false);
     } catch(err) {
       console.log(err)
     }
