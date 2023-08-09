@@ -6,7 +6,7 @@
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/SamuelMericko/PolyPeer/main?style=flat-square)
 # Sociálna sieť vo forme webovej aplikácie
 ## Špecifikácie:
-### Aplikácia by mala obsahovať:
+### Aplikácia obsahuje:
 
  - Funkčný registračný/prihlasovací formulár
  - Dynamické profilové stránky
