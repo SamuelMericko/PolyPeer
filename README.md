@@ -43,7 +43,7 @@
  
 ## Postup inštalácie projektu:
 1. Stiahnuť súbory z GitHubu.
-2. Stiahnúť a nainštalovať si VSCode - https://code.visualstudio.com/
+2. Stiahnúť a nainštalovať VSCode - https://code.visualstudio.com/
 3. Stiahnuť a nainštalovať najnovšiu verziu node.js (Current) - https://nodejs.org/en/
 4. Po úspešnom nainštalovaní programov rozbalíme stianutý .zip priečinok s kódom
 5. Pravým kliknutím myši na novovytvorený súbor zvolíme možnosť "Open with VSCode / Otvoriť v programe VSCode"
